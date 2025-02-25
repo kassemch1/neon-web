@@ -824,14 +824,34 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-footer-widget">
-                        <h3>Newsletter</h3>
-                        <div class="footer-newsletter-info">
-                            <p>Join over <span>68,000</span> people getting our emails Lorem ipsum dolor sit amet consectet </p>
-                            <form class="newsletter-form" data-toggle="validator">
-                                <label><i class='bx bx-envelope-open'></i></label>
-                                <input type="text" class="input-newsletter" placeholder="Enter your email address" name="EMAIL" required autocomplete="off">
-                                <button type="submit" class="default-btn"><i class="ri-send-plane-line"></i> Subscribe Now</button>
-                                <div id="validator-newsletter2" class="form-result"></div>
+                        <h3>Contact Us</h3>
+                        <div class="contact-form-footer">
+                            @if (session('success'))
+                                <div class="alert alert-success py-2 mb-3">
+                                    {{ session('success') }}
+                                </div>
+                            @endif
+
+                            <form action="{{ route('contact.submit') }}" method="POST">
+                                @csrf
+
+                                <div class="mb-3">
+                                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Your Email" required value="{{ old('email') }}">
+                                    @error('email')
+                                    <span class="invalid-feedback">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="mb-3">
+                                    <textarea name="message" class="form-control @error('message') is-invalid @enderror" rows="3" placeholder="Your Message" required>{{ old('message') }}</textarea>
+                                    @error('message')
+                                    <span class="invalid-feedback">{{ $message }}</span>
+                                    @enderror
+                                </div>
+
+                                <div class="text-left">
+                                    <button type="submit" class="default-btn"><i class="ri-send-plane-line"></i> Send Message</button>
+                                </div>
                             </form>
                         </div>
                     </div>
