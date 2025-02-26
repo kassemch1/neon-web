@@ -13,13 +13,13 @@
                     </ul>
                 </li>
 
-{{--                <li class="has-sub-menu"><a href="#"><i class="fa fa-shopping-bag"></i> <span>Manage Products</span></a>--}}
-{{--                    <ul class="side-header-sub-menu">--}}
-{{--                        <li><a href="{{route('manageProducts.create')}}"><span>Add Product</span></a></li>--}}
-{{--                        <li><a href="{{route('manageProducts.index')}}"><span>Edit Product</span></a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
-{{--            --}}
+                <li class="has-sub-menu"><a href="#"><i class="fa fa-shopping-bag"></i> <span>Manage Slider</span></a>
+                    <ul class="side-header-sub-menu">
+                        <li><a href="{{route('manageSlider.create')}}"><span>Add Slider</span></a></li>
+                        <li><a href="{{route('manageSlider.index')}}"><span>Edit Slider</span></a></li>
+                    </ul>
+                </li>
+
 {{--                <li class="has-sub-menu"><a href="#"><i class="fa fa-cogs"></i> <span>Manage Options</span></a>--}}
 {{--                    <ul class="side-header-sub-menu">--}}
 {{--                        <li><a href="{{route('manageOptions.create')}}"><span>Add Option</span></a></li>--}}
