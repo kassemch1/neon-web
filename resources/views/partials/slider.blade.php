@@ -98,7 +98,7 @@
                     <div class="col-lg-8">
                         <div class="banner-content owl-carousel owl-theme " style=" width:900px " >
                             <div class="item" style="height: 420px ; width : 290px"> 
-                                <img src="https://media.istockphoto.com/id/471842955/photo/blue-eye.jpg?s=1024x1024&w=is&k=20&c=oEqV-ydFvTUuR7tzqdYpF3pPBDP9z9xUTu7jo3FcmnM=" alt="image" style="height: 420px ; border-radius: 16px;"> 
+                                <img src="{{ asset('storage/'  . $banner->image1) }}" alt="image" style="height: 420px ; border-radius: 16px;"> 
                                 
                             </div>
                             <div class="item" style="height: 420px ; width : 290px"> 
