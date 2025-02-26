@@ -96,25 +96,29 @@
             <div class="col-lg-8" >
                 <div class="image" >
                     <div class="col-lg-8">
+                        @if($banner)
                         <div class="banner-content owl-carousel owl-theme " style=" width:900px " >
                             <div class="item" style="height: 420px ; width : 290px"> 
                                 <img src="{{ asset('storage/'  . $banner->image1) }}" alt="image" style="height: 420px ; border-radius: 16px;"> 
                                 
                             </div>
                             <div class="item" style="height: 420px ; width : 290px"> 
-                                <img src="https://media.istockphoto.com/id/1341300661/photo/brown-magic-mushroom-glowing-in-the-mystery-dark-forest-fantasy-concept.jpg?s=2048x2048&w=is&k=20&c=rDLrvp1T4qNa9CND1nb8D3x96TJ4mFrmNvfyiiJqpdo=" alt="image" style="height: 420px ; border-radius: 16px;">
+                                <img src="{{ asset('storage/'  . $banner->image2) }}" alt="image" style="height: 420px ; border-radius: 16px;">
                             
                         
                             </div>
                             <div class="item" style="height: 420px ; width : 290px">
-                                <img src="https://media.istockphoto.com/id/1469889857/photo/beautiful-woman-with-dark-suit-and-wavy-hair-studio-portrait-in-rgb-color-split-effect-style.jpg?s=1024x1024&w=is&k=20&c=6aa7q6J71KK_Rk9RG-vjWv_1iBACUv_mOadp8B_DQ5A=" alt="image" style="height: 420px ; border-radius: 16px;" >
+                                <img src="{{ asset('storage/'  . $banner->image3) }}" alt="image" style="height: 420px ; border-radius: 16px;" >
                                 
                             </div>
                             <div class="item" style="height: 420px ; width : 290px">
-                                <img src="https://media.istockphoto.com/id/1424106232/photo/beautiful-mushroom-on-blue-moss-background-close-up-lepiota-cristata-poisonous-mushroom.jpg?s=1024x1024&w=is&k=20&c=KhuvEc8M-FMZJC96kR1sosUfzeqZnoOCIX0E8xM-vec=" alt="image" style="height: 420px ; border-radius: 16px;">
+                                <img src="{{ asset('storage/'  . $banner->image4) }}" alt="image" style="height: 420px ; border-radius: 16px;">
                                 
                             </div>
                         </div>
+                        @else
+                        <div><h1>Please Add images to the slider</h1></div>
+                        @endif
                     </div>
                 </div>
             </div>

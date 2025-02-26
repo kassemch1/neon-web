@@ -24,7 +24,7 @@
 
     @include('partials/navbar')
     
-    @include('partials/slider')
+    @include('partials/slider', ['banner' => $banner])
 
 
 <!-- Start Fetuses Area -->
