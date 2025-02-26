@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin_controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
+use App\Models\Subscriber;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,6 +26,13 @@ class AdminController extends Controller
         $contacts=Contact::all();
         return view('admin_views/contacts/view_contacts',[
             'contacts'=>$contacts
+        ]);
+    }
+    public function subscribers_index()
+    {
+        $subscribers=Subscriber::all();
+        return view('admin_views/subscribers/view_subscribers',[
+            'subscribers'=>$subscribers
         ]);
     }
     public function authenticate(Request $request): RedirectResponse

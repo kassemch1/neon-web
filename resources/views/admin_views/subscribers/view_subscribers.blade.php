@@ -58,7 +58,7 @@
             <!-- Page Heading Start -->
             <div class="col-12 col-lg-auto mb-20">
                 <div class="page-heading">
-                    <h3>Contacts</h3>
+                    <h3>Subscribers</h3>
                 </div>
             </div><!-- Page Heading End -->
 
@@ -68,23 +68,21 @@
         <div class="col-lg-12 col-12 mb-30">
             <div class="box">
                 <div class="box-head">
-                    <h4 class="title">Contacts</h4>
+                    <h4 class="title">Subscribers</h4>
                 </div>
                 <div class="box-body">
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>Email</th>
-                            <th>Message</th>
-                            <th>Received At</th>
+                            <th>subscribers</th>
+                            <th>Subscribed At</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($contacts as $contact)
+                        @foreach($subscribers as $subscriber)
                             <tr>
-                                <td>{{ $contact->email }}</td>
-                                <td>{{ $contact->message }}</td>
-                                <td>{{ $contact->created_at->format('Y-m-d H:i:s') }}</td>
+                                <td>{{ $subscriber->email }}</td>
+                                <td>{{ $subscriber->created_at->format('Y-m-d H:i:s') }}</td>
                             </tr>
                         @endforeach
                         </tbody>
