@@ -28,6 +28,13 @@
 
 
 
+               <li class="has-sub-menu"><a href="#"><i class="fa fa-shopping-bag"></i> <span>Manage BannerSlider</span></a>
+                   <ul class="side-header-sub-menu">
+                      <li><a href="{{route('banner-slider.store')}}"><span>Add BannerSlide</span></a></li>
+                       <li><a><span>Edit BannerSlide</span></a></li>
+               </ul>
+           </li>
+{{--            --}}
 {{--                <li class="has-sub-menu"><a href="#"><i class="fa fa-cogs"></i> <span>Manage Options</span></a>--}}
 {{--                    <ul class="side-header-sub-menu">--}}
 {{--                        <li><a href="{{route('manageOptions.create')}}"><span>Add Option</span></a></li>--}}
