@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Manage Banner</title>
+    <title>Manage Slider</title>
     <meta name="robots" content="noindex, follow"/>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -58,7 +58,7 @@
             <!-- Page Heading Start -->
             <div class="col-12 col-lg-auto mb-20">
                 <div class="page-heading">
-                    <h3>Manage Banner</h3>
+                    <h3>Manage Slider</h3>
                 </div>
             </div><!-- Page Heading End -->
 
@@ -68,29 +68,32 @@
         <div class="col-lg-6 col-12 mb-30">
             <div class="box">
                 <div class="box-head">
-                    <h4 class="title">Banner</h4>
+                    <h4 class="title">Slider</h4>
                 </div>
                 <div class="box-body">
                     <table class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>Image</th>
-                            <th>Product Name</th>
+                            <th>Image1</th>
+                            <th>Image2</th>
+                            <th>Name</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($banners as $banner)
+                        @foreach($sliders as $slider)
                             <tr>
-                                <td><img src="{{asset("$banner->image")}}" alt="Banner Image" width="120" height="100"></td>
-                                <td>{{$banner->getProduct->name}}</td>
-
+                                <td><img src="{{asset("$slider->images")}}" alt="Slider Image" style="width: 100%; height: auto; object-fit: contain;" ></td>
+                                <td><img src="{{asset("$slider->secondImage")}}" alt="Slider Image" style="width: 100%; height: auto; object-fit: contain;"></td>
+                                <td>{{$slider->name}}</td>
                                 <td>
                                     <a class="button button-info"
-                                       href="{{route("manageBanner.create")}}"><span>Update</span></a>
-{{--                                    <button id="deleteTestimonial" class="button button-danger" data-toggle="modal"--}}
-{{--                                            data-target="#exampleModalCenter" data-id="{{$banner->id}}" onclick="getBannerId('{{$banner->id}}')"><span>Delete</span>--}}
-{{--                                    </button>--}}
+                                       href="{{route("manageSlider.edit",['id'=>$slider->id])}}" ><i class="zmdi zmdi-edit"></i><span>Edit</span></a>
+                                    <br>
+                                    <button id="deleteTestimonial" class="button button-danger" data-toggle="modal"
+                                            data-target="#exampleModalCenter" data-id="{{$slider->id}}" onclick="getSliderId('{{$slider->id}}')">
+                                        <i class="zmdi zmdi-delete"></i><span>Delete</span>
+                                    </button>
                                 </td>
                             </tr>
                         @endforeach
@@ -105,19 +108,19 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-{{--                                    <div class="modal-body">--}}
-{{--                                        Are you sure you want to delete this item?--}}
-{{--                                    </div>--}}
-{{--                                    <div class="modal-footer">--}}
-{{--                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close--}}
-{{--                                        </button>--}}
-{{--                                        <form id="deleteProductForm"--}}
-{{--                                              action="{{route('manageBanner.destroy')}}" method="post">--}}
-{{--                                            @csrf--}}
-{{--                                            @method('delete')--}}
-{{--                                            <button type="submit" class="btn btn-danger">Yes</button>--}}
-{{--                                        </form>--}}
-{{--                                    </div>--}}
+                                    <div class="modal-body">
+                                        Are you sure you want to delete this item?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                        </button>
+                                        <form id="deleteProductForm"
+                                              action="{{route('manageSlider.destroy')}}" method="post">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="btn btn-danger">Yes</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -131,9 +134,9 @@
     </div><!-- Content Body End -->
 
      <!-- Footer Section Start -->
-   
+
      @include('partials.adminFooter')
-     
+
      <!-- Footer Section End -->
 
 </div>
@@ -159,10 +162,10 @@
 <script src="{{asset("admin_assets/js/plugins/dropify/dropify.active.js")}}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    var banner_id = 0;
-    function getBannerId(id)
+    var slider_id = 0;
+    function getSliderId(id)
     {
-        banner_id = id;
+        slider_id = id;
     }
 
     $(document).ready(function () {
@@ -179,7 +182,7 @@
                 },
                 type: 'DELETE',
                 url: url,
-                data: { id: banner_id },
+                data: { id: slider_id },
                 // url: url,
                 success: function (response) {
                     console.log('Product deleted successfully.');

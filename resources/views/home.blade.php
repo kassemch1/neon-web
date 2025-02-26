@@ -340,27 +340,27 @@
         <div class="row justify-content-between align-items-center">
             <div class="col-lg-2 col-md-2 col-6" data-aos="fade-up" data-aos-duration="1000">
                 <div class="image">
-                    <img src="assets/img/01.png" alt="image">
+                    <img src="{{asset('assets/img/01.png')}}" alt="image">
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-6" data-aos="fade-up" data-aos-duration="1000">
                 <div class="image">
-                    <img src="assets/img/02.png" alt="image">
+                    <img src="{{asset('assets/img/02.png')}}" alt="image">
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-6" data-aos="fade-up" data-aos-duration="1000">
                 <div class="image">
-                    <img src="assets/img/03.png" alt="image">
+                    <img src="{{asset('assets/img/03.png')}}" alt="image">
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-6" data-aos="fade-up" data-aos-duration="1000">
                 <div class="image">
-                    <img src="assets/img/04.png" alt="image">
+                    <img src="{{asset('assets/img/04.png')}}" alt="image">
                 </div>
             </div>
             <div class="col-lg-2 col-md-2 col-6" data-aos="fade-up" data-aos-duration="1000">
                 <div class="image">
-                    <img src="assets/img/05.png" alt="image">
+                    <img src="{{asset('assets/img/05.png')}}" alt="image">
                 </div>
             </div>
         </div>
@@ -374,7 +374,7 @@
         <div class="image-courser owl-carousel owl-theme" data-aos="fade-up" data-aos-duration="1500">
             <div class="courser-item">
                 <div class="image-item">
-                    <img src="assets/img/about-image-1.jpg" alt="image">
+                    <img src="{{asset('assets/img/about-image-1.jpg')}}" alt="image">
                     <div class="hover-content">
                         <h4>Christian Haol</h4>
                         <p>Web Developer</p>
@@ -635,14 +635,15 @@
             </div>
             <div class="col-lg-8">
                 <div class="article-content owl-carousel owl-theme">
+                    @foreach($sliders as $slider)
                     <div class="item">
-                        <img src="assets/img/blogs/artical-1.jpg" alt="image">
+                        <img src="{{asset($slider->images)}}" alt="image">
                         <div class="pop-content">
-                            <h3><a href="blog-details.html">The actual history of machine intelligence</a></h3>
-                            <ul>
-                                <li>March 18, 2022</li>
-                                <li><span>0</span>Comments</li>
-                            </ul>
+                            <h3><a href="blog-details.html">{{$slider->name}}</a></h3>
+{{--                            <ul>--}}
+{{--                                <li>{{$slider->created_at}}</li>--}}
+{{--                                <li><span>0</span>Comments</li>--}}
+{{--                            </ul>--}}
                         </div>
                         <a href="blog-details.html">
                             <div class="go-corner">
@@ -652,57 +653,58 @@
                             </div>
                         </a>
                     </div>
-                    <div class="item">
-                        <img src="assets/img/blogs/artical-3.jpg" alt="image">
-                        <div class="pop-content">
-                            <h3><a href="blog-details.html">The actual history of machine intelligence</a></h3>
-                            <ul>
-                                <li>March 18, 2022</li>
-                                <li><span>0</span>Comments</li>
-                            </ul>
-                        </div>
-                        <a href="blog-details.html">
-                            <div class="go-corner">
-                                <div class="go-arrow">
-                                    <i class="ri-arrow-right-up-line"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <img src="assets/img/blogs/artical-2.jpg" alt="image">
-                        <div class="pop-content">
-                            <h3><a href="blog-details.html">The actual history of machine intelligence</a></h3>
-                            <ul>
-                                <li>March 18, 2022</li>
-                                <li><span>0</span>Comments</li>
-                            </ul>
-                        </div>
-                        <a href="blog-details.html">
-                            <div class="go-corner">
-                                <div class="go-arrow">
-                                    <i class="ri-arrow-right-up-line"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="item">
-                        <img src="assets/img/blogs/artical-4.jpg" alt="image">
-                        <div class="pop-content">
-                            <h3><a href="blog-details.html">The actual history of machine intelligence</a></h3>
-                            <ul>
-                                <li>March 18, 2022</li>
-                                <li><span>0</span>Comments</li>
-                            </ul>
-                        </div>
-                        <a href="blog-details.html">
-                            <div class="go-corner">
-                                <div class="go-arrow">
-                                    <i class="ri-arrow-right-up-line"></i>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                    @endforeach
+{{--                    <div class="item">--}}
+{{--                        <img src="assets/img/blogs/artical-3.jpg" alt="image">--}}
+{{--                        <div class="pop-content">--}}
+{{--                            <h3><a href="blog-details.html">The actual history of machine intelligence</a></h3>--}}
+{{--                            <ul>--}}
+{{--                                <li>March 18, 2022</li>--}}
+{{--                                <li><span>0</span>Comments</li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <a href="blog-details.html">--}}
+{{--                            <div class="go-corner">--}}
+{{--                                <div class="go-arrow">--}}
+{{--                                    <i class="ri-arrow-right-up-line"></i>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <div class="item">--}}
+{{--                        <img src="assets/img/blogs/artical-2.jpg" alt="image">--}}
+{{--                        <div class="pop-content">--}}
+{{--                            <h3><a href="blog-details.html">The actual history of machine intelligence</a></h3>--}}
+{{--                            <ul>--}}
+{{--                                <li>March 18, 2022</li>--}}
+{{--                                <li><span>0</span>Comments</li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <a href="blog-details.html">--}}
+{{--                            <div class="go-corner">--}}
+{{--                                <div class="go-arrow">--}}
+{{--                                    <i class="ri-arrow-right-up-line"></i>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
+{{--                    <div class="item">--}}
+{{--                        <img src="assets/img/blogs/artical-4.jpg" alt="image">--}}
+{{--                        <div class="pop-content">--}}
+{{--                            <h3><a href="blog-details.html">The actual history of machine intelligence</a></h3>--}}
+{{--                            <ul>--}}
+{{--                                <li>March 18, 2022</li>--}}
+{{--                                <li><span>0</span>Comments</li>--}}
+{{--                            </ul>--}}
+{{--                        </div>--}}
+{{--                        <a href="blog-details.html">--}}
+{{--                            <div class="go-corner">--}}
+{{--                                <div class="go-arrow">--}}
+{{--                                    <i class="ri-arrow-right-up-line"></i>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </a>--}}
+{{--                    </div>--}}
                 </div>
             </div>
         </div>
