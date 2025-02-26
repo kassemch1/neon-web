@@ -140,6 +140,38 @@
 		}
 	});
 	
+	// Banner Slider
+	$('.banner-content').owlCarousel({
+		dots: false,
+		nav: false,
+		loop: true,
+		margin: 10,
+		autoplay: true,
+		autoplayTimeout: 2000,
+		autoplayHoverPause: true,
+		responsive: {
+			0: {
+				items: 2
+			},
+			576: {
+				items: 1
+			},
+			768: {
+				items: 3
+			},
+			992: {
+				items: 2
+			},
+			1200: {
+				items: 3
+			}
+		}
+		
+	}); 
+
+	
+	
+	
 	// Instagram slider
 	$('.ins-gallery').owlCarousel({
 		nav: false,
