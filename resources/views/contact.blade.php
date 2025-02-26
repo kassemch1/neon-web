@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AiNext - AI Agency & Startup HTML Template</title>
+
+    <!-- CSS Linked -->
+    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/remixicon.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/odometer.min.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/aos.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
+
+    <!-- favicon Linked -->
+    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.png')}}">
+
+</head>
+<body>
+
+
+
+@include('partials/navbar')
+
+<!-- Start Banner Area -->
+<div class="section-banner">
+    <div class="container">
+        <div class="section-banner-title">
+            <h1>Contact Us</h1>
+            <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- End Banner Area -->
+
+<!-- Start Contact Area -->
+<div class="contact-area ptb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-title">
+                    <div class="width">
+                        <div class="sub-t">Contact</div>
+                        <h2>Request Materials Information</h2>
+                        <p>Need high-quality raw materials for your business? Contact us for pricing, availability, and custom orders.</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <div id="contact-response" style="display: none;" class="alert py-2 mb-3"></div>
+
+                    <form id="contactForm">
+                        @csrf
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12">
+                                <div class="form-group">
+                                    <input type="text" name="email" class="form-control" id="email" required data-error="Please enter your Email Address" placeholder="Email Address">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12 mb-5">
+                                <div class="form-group">
+                                    <textarea name="message" id="message" class="form-control" cols="30" rows="6" required data-error="Please enter your message" placeholder="Write your message..."></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-md-12">
+                                <button type="submit" class="default-btn"><i class="ri-mail-send-line"></i> Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="image">
+                    <img src="assets/img/contact.jpg" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Contact Area -->
+
+<!-- Start Insta Gallery Area -->
+<div class="insta-gallery">
+    <div class="conatiner-fluid">
+        <div class="ins-gallery owl-carousel owl-theme">
+            <div class="items">
+                <a href="https://www.instagram.com/" target="_blank" >
+                    <img src="assets/img/gallery/insta-1.jpg" alt="image">
+                    <i class="ri-instagram-line"></i>
+                </a>
+            </div>
+            <div class="items">
+                <a href="https://www.instagram.com/" target="_blank" >
+                    <img src="assets/img/gallery/insta-10.jpg" alt="image">
+                    <i class="ri-instagram-line"></i>
+                </a>
+            </div>
+            <div class="items">
+                <a href="https://www.instagram.com/" target="_blank" >
+                    <img src="assets/img/gallery/insta-2.jpg" alt="image">
+                    <i class="ri-instagram-line"></i>
+                </a>
+            </div>
+            <div class="items">
+                <a href="https://www.instagram.com/" target="_blank" >
+                    <img src="assets/img/gallery/insta-3.jpg" alt="image">
+                    <i class="ri-instagram-line"></i>
+                </a>
+            </div>
+            <div class="items">
+                <a href="https://www.instagram.com/" target="_blank" >
+                    <img src="assets/img/gallery/insta-4.jpg" alt="image">
+                    <i class="ri-instagram-line"></i>
+                </a>
+            </div>
+            <div class="items">
+                <a href="https://www.instagram.com/" target="_blank" >
+                    <img src="assets/img/gallery/insta-5.jpg" alt="image">
+                    <i class="ri-instagram-line"></i>
+                </a>
+            </div>
+            <div class="items">
+                <a href="https://www.instagram.com/" target="_blank" >
+                    <img src="assets/img/gallery/insta-6.jpg" alt="image">
+                    <i class="ri-instagram-line"></i>
+                </a>
+            </div>
+            <div class="items">
+                <a href="https://www.instagram.com/" target="_blank" >
+                    <img src="assets/img/gallery/insta-7.jpg" alt="image">
+                    <i class="ri-instagram-line"></i>
+                </a>
+            </div>
+            <div class="items">
+                <a href="https://www.instagram.com/" target="_blank" >
+                    <img src="assets/img/gallery/insta-8.jpg" alt="image">
+                    <i class="ri-instagram-line"></i>
+                </a>
+            </div>
+            <div class="items">
+                <a href="https://www.instagram.com/" target="_blank" >
+                    <img src="assets/img/gallery/insta-9.jpg" alt="image">
+                    <i class="ri-instagram-line"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Insta Gallery Area -->
+
+@include('partials/footer')
+
+<!-- Top to Bottom -->
+<div id="progress">
+    <span id="progress-value"><i class="ri-arrow-up-line"></i></span>
+</div>
+<!-- End Top to Bottom -->
+<!--Start Popup Script-->
+<script data-cfasync="false">(function(w,i,s,e){window[w]=window[w]||function(){(window[w].q=window[w].q||[]).push(arguments)};window[w].l=Date.now();s=document.createElement('script');e=document.getElementsByTagName('script')[0];s.defer=1;s.src=i;e.parentNode.insertBefore(s, e)})('wisepops', '../../../wisepops.net/loader5c69.html?v=2&amp;h=HzBeEscjD9');</script>
+
+<!--Start of Live Chat Script-->
+<script src="../../../code.tidio.co_443/ukbzkumwslzb2mxazsvwu2r0hnenldtf.js" async></script>
+<!--End of  Live Chat  Script-->
+
+<!-- Js Linked -->
+<script src="{{asset('assets/js/jquery.min.js')}}"></script>
+<script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>
+<script src="{{asset('assets/js/aos.js')}}}"></script>
+<script src="{{asset('assets/js/appear.min.js')}}"></script>
+<script src="{{asset('assets/js/odometer.min.js')}}"></script>
+<script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('assets/js/ainext.js')}}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const contactForm = document.getElementById('contactForm');
+        const responseDiv = document.getElementById('contact-response');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const formData = new FormData(contactForm);
+                // Add CSRF token if not already in the form
+                if (!formData.has('_token')) {
+                    formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
+                }
+
+                $.ajax({
+                    url: "{{ route('contact.submit') }}",
+                    type: "POST",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        responseDiv.textContent = response.message || 'Thank you for contacting us! We will get back to you soon.';
+                        responseDiv.style.display = 'block';
+                        responseDiv.className = 'alert alert-success py-2 mb-3';
+
+                        contactForm.reset();
+
+                        setTimeout(function() {
+                            responseDiv.style.display = 'none';
+                        }, 5000);
+                    },
+                    error: function(xhr) {
+                        let errorMessage = 'Something went wrong. Please try again.';
+
+                        // Check if there are specific validation errors
+                        if (xhr.status === 422 && xhr.responseJSON && xhr.responseJSON.errors) {
+                            // Join multiple error messages if there are any
+                            errorMessage = xhr.responseJSON.errors.join('<br>');
+                        } else if (xhr.responseJSON && xhr.responseJSON.message) {
+                            errorMessage = xhr.responseJSON.message;
+                        }
+
+                        responseDiv.innerHTML = errorMessage;
+                        responseDiv.style.display = 'block';
+                        responseDiv.className = 'alert alert-danger py-2 mb-3';
+
+                        setTimeout(function() {
+                            responseDiv.style.display = 'none';
+                        }, 5000);
+                    }
+                });
+            });
+        }
+    });
+</script>
+
+
+
+</body>
+
+</html>

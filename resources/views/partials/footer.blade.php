@@ -43,34 +43,19 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-footer-widget">
-                        <h3>Contact Us</h3>
-                        <div class="contact-form-footer">
-                            @if (session('success'))
-                                <div class="alert alert-success py-2 mb-3">
-                                    {{ session('success') }}
-                                </div>
-                            @endif
+                        <h3>Subscription</h3>
+                        <div class="footer-newsletter-info">
+                            <p>Subscribe now to stay updated with our latest content, news, and exclusive offers!</p>
 
-                            <form action="{{ route('contact.submit') }}" method="POST">
+
+                            <div id="subscribe-response" style="display: none;" class="alert py-2 mb-3"></div>
+
+                            <form id="subscribe-form" class="newsletter-form" data-toggle="validator">
                                 @csrf
-
-                                <div class="mb-3">
-                                    <input type="email" name="email" class="form-control @error('email') is-invalid @enderror" placeholder="Your Email" required value="{{ old('email') }}">
-                                    @error('email')
-                                    <span class="invalid-feedback">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-3">
-                                    <textarea name="message" class="form-control @error('message') is-invalid @enderror" rows="3" placeholder="Your Message" required>{{ old('message') }}</textarea>
-                                    @error('message')
-                                    <span class="invalid-feedback">{{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="text-left">
-                                    <button type="submit" class="default-btn"><i class="ri-send-plane-line"></i> Send Message</button>
-                                </div>
+                                <label><i class="bx bx-envelope-open"></i></label>
+                                <input type="text" class="input-newsletter" placeholder="Enter your email address" name="email" required="" autocomplete="off">
+                                <button type="submit" class="default-btn"><i class="ri-send-plane-line"></i> Subscribe Now</button>
+                                <div id="validator-newsletter2" class="form-result"></div>
                             </form>
                         </div>
                     </div>
@@ -89,3 +74,57 @@
     </div>
 </footer>
 <!-- End Footer Area -->
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const subscribeForm = document.getElementById('subscribe-form');
+        const responseDiv = document.getElementById('subscribe-response');
+
+        if (subscribeForm) {
+            subscribeForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const formData = new FormData(subscribeForm);
+                // Add CSRF token if not already in the form
+                if (!formData.has('_token')) {
+                    formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
+                }
+
+                $.ajax({
+                    url: "{{ route('subscribe') }}",
+                    type: "POST",
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(response) {
+                        responseDiv.textContent = response.message || 'Thank you for subscribing!';
+                        responseDiv.style.display = 'block';
+                        responseDiv.className = 'alert alert-success py-2 mb-3';
+
+                        subscribeForm.reset();
+
+                        setTimeout(function() {
+                            responseDiv.style.display = 'none';
+                        }, 5000);
+                    },
+                    error: function(xhr) {
+                        let errorMessage = 'Something went wrong. Please try again.';
+
+                        if (xhr.status === 422) {
+                            errorMessage = 'This email is already subscribed.';
+                        }
+
+                        responseDiv.textContent = errorMessage;
+                        responseDiv.style.display = 'block';
+                        responseDiv.className = 'alert alert-danger py-2 mb-3';
+
+                        setTimeout(function() {
+                            responseDiv.style.display = 'none';
+                        }, 5000);
+                    }
+                });
+            });
+        }
+    });
+</script>

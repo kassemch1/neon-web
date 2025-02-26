@@ -12,6 +12,21 @@
 {{--                        <li><a href="{{route('manageCategories.index')}}"><span>Edit Category</span></a></li>--}}
                     </ul>
                 </li>
+                <li class="has-sub-menu"><a href="#"><i class="fa fa-shopping-bag"></i> <span>Subscribers</span></a>
+                    <ul class="side-header-sub-menu">
+                        <li><a href="{{route('subscribers.index')}}"><span>View Subscribers</span></a></li>
+
+                    </ul>
+                </li>
+
+                <li class="has-sub-menu"><a href="#"><i class="fa fa-shopping-bag"></i> <span>Manage Slider</span></a>
+                    <ul class="side-header-sub-menu">
+                        <li><a href="{{route('manageSlider.create')}}"><span>Add Slider</span></a></li>
+                        <li><a href="{{route('manageSlider.index')}}"><span>Edit Slider</span></a></li>
+                    </ul>
+                </li>
+
+
 
                <li class="has-sub-menu"><a href="#"><i class="fa fa-shopping-bag"></i> <span>Manage BannerSlider</span></a>
                    <ul class="side-header-sub-menu">

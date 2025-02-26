@@ -57,7 +57,7 @@
             <!-- Page Heading Start -->
             <div class="col-12 col-lg-auto mb-20">
                 <div class="page-heading">
-                    <h3>Manage Banner</h3>
+                    <h3>Manage Slider</h3>
                 </div>
             </div><!-- Page Heading End -->
 
@@ -68,22 +68,43 @@
         <div class="add-edit-product-wrap col-12">
 
             <div class="add-edit-product-form">
-                <form id="productForm" method="post" action="{{route('manageBanner.store')}}" enctype="multipart/form-data">
+                <form id="sliderForm" method="post" action="{{route('manageSlider.store')}}" enctype="multipart/form-data">
                     @csrf
-                    <h4 class="title">Add Banner</h4>
+                    <h4 class="title">Add Slider</h4>
                     <div class="row">
-                        <div class="col-lg-6 col-12 mb-30">
-                            <label for="">Product</label>
-                            <select name="product_id" class="form-control select2">
-                                @foreach($products as $product)
-                                    <option value="{{$product->id}}">{{$product->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
+{{--                        <div class="col-lg-6 col-12 mb-30">--}}
+{{--                            <label for="">Product</label>--}}
+{{--                            <select name="product_id" class="form-control select2">--}}
+{{--                                @foreach($products as $product)--}}
+{{--                                    <option value="{{$product->id}}">{{$product->name}}</option>--}}
+{{--                                @endforeach--}}
+{{--                            </select>--}}
+{{--                        </div>--}}
                         <br>
                         <div class="col-12 mb-30">
-                            <label>Product Picture</label>
-                            <input class="dropify" type="file" name="image">
+                            <label>First Picture</label>
+                            <input class="dropify" type="file" name="images">
+                        </div>
+                        <div class="col-12 mb-30">
+                            <label>Second Picture</label>
+                            <input class="dropify" type="file" name="secondImage">
+                        </div>
+
+
+                        <div class="col-12 mb-30">
+                            <label for="">Name</label>
+                            <textarea name="name" class="form-control"></textarea>
+                            @if ($errors->has('name'))
+                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                            @endif
+                        </div>
+
+                        <div class="col-12 mb-30">
+                            <label for="">Description</label>
+                            <textarea name="description" class="form-control"></textarea>
+                            @if ($errors->has('description'))
+                                <span class="text-danger">{{ $errors->first('description') }}</span>
+                            @endif
                         </div>
                     </div>
                     <!-- Success Alert -->
@@ -108,9 +129,9 @@
     </div><!-- Content Body End -->
 
     <!-- Footer Section Start -->
-   
+
      @include('partials.adminFooter')
-     
+
      <!-- Footer Section End -->
 
 </div>
@@ -139,7 +160,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
-        $('#productForm').submit(function (e) {
+        $('#sliderForm').submit(function (e) {
             e.preventDefault(); // Prevent default form submission
 
             // Serialize form data
