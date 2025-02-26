@@ -831,7 +831,7 @@
                             @if (session('success'))
                                 <div class="alert alert-success py-2 mb-3">
                                     {{ session('success') }}
-                                </div>
+                                </div>git
                             @endif
 
                             <form action="{{ route('contact.submit') }}" method="POST">
