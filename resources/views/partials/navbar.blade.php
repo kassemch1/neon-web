@@ -71,7 +71,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/aboutus" class="nav-link active">
+                    <a href="{{route('about')}}" class="nav-link active">
                         About
                     </a>
                 </li>

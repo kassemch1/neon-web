@@ -19,6 +19,76 @@
     <!-- favicon Linked -->
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
+    <style>
+        .faq-container {
+            margin-top: 50px;
+        }
+
+        .faq-header {
+            font-size: 42px;
+            border-bottom: 1px dotted #ccc;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .faq-content {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        .faq-question {
+            padding: 20px 0;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        .panel-title {
+            font-size: 24px;
+            width: 100%;
+            position: relative;
+            margin: 0;
+            padding: 10px 10px 0 48px;
+            display: block;
+            cursor: pointer;
+        }
+
+        .panel-content {
+            font-size: 20px;
+            padding: 0px 14px;
+            margin: 0 40px;
+            height: 0;
+            overflow: hidden;
+            z-index: -1;
+            position: relative;
+            opacity: 0;
+            transition: .4s ease;
+        }
+
+        .panel:checked ~ .panel-content {
+            height: auto;
+            opacity: 1;
+            padding: 14px;
+        }
+
+        .plus {
+            position: absolute;
+            margin-left: 20px;
+            margin-top: 4px;
+            z-index: 5;
+            font-size: 42px;
+            line-height: 100%;
+            user-select: none;
+            transition: .2s ease;
+        }
+
+        .panel:checked ~ .plus {
+            transform: rotate(45deg);
+        }
+
+        .panel {
+            display: none;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -91,55 +161,33 @@
 </div>
 <!-- About Area -->
 
-<!-- Start Testimonial Area -->
-<div class="testimonial-area ptb-100">
-    <div class="container">
-        <div class="testimonial-content owl-carousel owl-theme">
-            <div class="testimonial-item">
-                <ul>
-                    <li><i class="ri-star-s-fill"></i></li>
-                    <li><i class="ri-star-s-fill"></i></li>
-                    <li><i class="ri-star-s-fill"></i></li>
-                    <li><i class="ri-star-s-fill"></i></li>
-                    <li><i class="ri-star-s-fill"></i></li>
-                </ul>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using</p>
-                <h4>Aloin Lden</h4>
-                <span>Web Developer</span>
-            </div>
-            <div class="testimonial-item">
-                <ul>
-                    <li><i class="ri-star-s-fill"></i></li>
-                    <li><i class="ri-star-s-fill"></i></li>
-                    <li><i class="ri-star-s-fill"></i></li>
-                    <li><i class="ri-star-s-fill"></i></li>
-                    <li><i class="ri-star-s-fill"></i></li>
-                </ul>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In aut, tempora iste quidem ipsa eos. Mollitia, illo, nisi laboriosam nostrum</p>
-                <h4>Jacob Daniels</h4>
-                <span>Engineer</span>
-            </div>
+<div class="faq-container">
+    <div class="faq-header">Frequently Asked Questions</div>
+
+    <div class="faq-content">
+        <div class="faq-question">
+            <input id="q1" type="checkbox" class="panel">
+            <div class="plus">+</div>
+            <label for="q1" class="panel-title">What is the meaning of life?</label>
+            <div class="panel-content">42</div>
         </div>
-        <div class="user">
-            <img src="assets/img/user-1.jpg" alt="image">
+
+        <div class="faq-question">
+            <input id="q2" type="checkbox" class="panel">
+            <div class="plus">+</div>
+            <label for="q2" class="panel-title">How much wood would a woodchuck chuck?</label>
+            <div class="panel-content">A woodchuck would chuck all the wood he could chuck, if a woodchuck could chuck wood!</div>
         </div>
-        <div class="user">
-            <img src="assets/img/user-2.jpg" alt="image">
-        </div>
-        <div class="user">
-            <img src="assets/img/user-3.jpg" alt="image">
-        </div>
-        <div class="user">
-            <img src="assets/img/user-4.jpg" alt="image">
+
+        <div class="faq-question">
+            <input id="q3" type="checkbox" class="panel">
+            <div class="plus">+</div>
+            <label for="q3" class="panel-title">What happens if Pinocchio says, "my nose will grow now"?</label>
+            <div class="panel-content">Certain questions are better left &nbsp; <a href="https://en.wikipedia.org/wiki/The_Unanswered_Question" target="_blank">unanswered</a></div>
         </div>
     </div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
-    <div class="star"></div>
 </div>
-<!-- End Testimonial Area -->
+
 
 <!-- Start Brands Area -->
 <div class="brands-area pt-70 pb-70">
