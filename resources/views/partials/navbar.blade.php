@@ -71,6 +71,11 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="/aboutus" class="nav-link active">
+                        About
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="javascript:void(0)" class="dropdown-toggle nav-link">
                         Pages
                     </a>
