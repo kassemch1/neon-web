@@ -41,9 +41,9 @@
         </ul>
         <div class="others-option d-md-flex align-items-center">
             <div class="option-item">
-                <a href="contact.html" class="default-btn">
+                <a href="{{ route('download.catalogue') }}" class="default-btn">
                     <i class="ri-arrow-right-line"></i>
-                    <span>Get Started</span>
+                    <span>Download Catalogue</span>
                 </a>
             </div>
         </div>
@@ -141,8 +141,8 @@
                 </li>
             </ul>
             <div class="nav-btn">
-                <a href="contact.html" class="default-btn">
-                    Get Started
+                <a href="{{ route('download.catalogue') }}" class="default-btn">
+                    Download Catalogue
                     <i class="ri-arrow-right-line"></i>
                 </a>
             </div>
