@@ -34,6 +34,13 @@
                        
                </ul>
            </li>
+
+            <li class="has-sub-menu"><a href="#"><i class="fa fa-tags"></i> <span>About Us</span></a>
+                <ul class="side-header-sub-menu">
+                    <li><a href="{{route('aboutus.index')}}"><span>Edit About Us</span></a></li>
+                    {{--                        <li><a href="{{route('manageCategories.index')}}"><span>Edit Category</span></a></li>--}}
+                </ul>
+            </li>
 {{--            --}}
 {{--                <li class="has-sub-menu"><a href="#"><i class="fa fa-cogs"></i> <span>Manage Options</span></a>--}}
 {{--                    <ul class="side-header-sub-menu">--}}
