@@ -30,9 +30,9 @@
 
             <li class="responsive-menu-list"><a href="javascript:void(0);">Blog</a>
                 <ul class="responsive-menu-items">
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="blog-sidebar.html">Blog Right Sidebar</a></li>
-                    <li><a href="blog-details.html">Blog Details</a></li>
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="blog-sidebar">Blog Right Sidebar</a></li>
+                    <li><a href="blog-details">Blog Details</a></li>
                 </ul>
             </li>
             <li class="responsive-menu-list without-icon">
@@ -76,7 +76,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li class="nav-item">
-                            <a href="about.html" class="nav-link">
+                            <a href="about" class="nav-link">
                                 About Us
                             </a>
                         </li>
@@ -86,7 +86,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pricing.html" class="nav-link">
+                            <a href="pricing" class="nav-link">
                                 Pricing
                             </a>
                         </li>
@@ -108,7 +108,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="portfolio.html" class="nav-link">
+                    <a href="portfolio" class="nav-link">
                         Portfolio
                     </a>
                 </li>
@@ -118,17 +118,17 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li class="nav-item">
-                            <a href="blog.html" class="nav-link">
+                            <a href="blog" class="nav-link">
                                 Blog Grid
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="blog-sidebar.html" class="nav-link">
+                            <a href="blog-sidebar" class="nav-link">
                                 Blog Right Sidebar
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="blog-details.html" class="nav-link">
+                            <a href="blog-details" class="nav-link">
                                 Blog Details
                             </a>
                         </li>
