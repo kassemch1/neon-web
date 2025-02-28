@@ -30,9 +30,9 @@
 
             <li class="responsive-menu-list"><a href="javascript:void(0);">Blog</a>
                 <ul class="responsive-menu-items">
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="blog-sidebar.html">Blog Right Sidebar</a></li>
-                    <li><a href="blog-details.html">Blog Details</a></li>
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="blog-sidebar">Blog Right Sidebar</a></li>
+                    <li><a href="blog-details">Blog Details</a></li>
                 </ul>
             </li>
             <li class="responsive-menu-list without-icon">
@@ -41,9 +41,9 @@
         </ul>
         <div class="others-option d-md-flex align-items-center">
             <div class="option-item">
-                <a href="contact.html" class="default-btn">
+                <a href="{{ route('download.catalogue') }}" class="default-btn">
                     <i class="ri-arrow-right-line"></i>
-                    <span>Get Started</span>
+                    <span>Download Catalogue</span>
                 </a>
             </div>
         </div>
@@ -81,7 +81,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li class="nav-item">
-                            <a href="about.html" class="nav-link">
+                            <a href="about" class="nav-link">
                                 About Us
                             </a>
                         </li>
@@ -91,7 +91,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pricing.html" class="nav-link">
+                            <a href="pricing" class="nav-link">
                                 Pricing
                             </a>
                         </li>
@@ -113,7 +113,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="portfolio.html" class="nav-link">
+                    <a href="portfolio" class="nav-link">
                         Portfolio
                     </a>
                 </li>
@@ -123,17 +123,17 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li class="nav-item">
-                            <a href="blog.html" class="nav-link">
+                            <a href="blog" class="nav-link">
                                 Blog Grid
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="blog-sidebar.html" class="nav-link">
+                            <a href="blog-sidebar" class="nav-link">
                                 Blog Right Sidebar
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="blog-details.html" class="nav-link">
+                            <a href="blog-details" class="nav-link">
                                 Blog Details
                             </a>
                         </li>
@@ -146,8 +146,8 @@
                 </li>
             </ul>
             <div class="nav-btn">
-                <a href="contact.html" class="default-btn">
-                    Get Started
+                <a href="{{ route('download.catalogue') }}" class="default-btn">
+                    Download Catalogue
                     <i class="ri-arrow-right-line"></i>
                 </a>
             </div>

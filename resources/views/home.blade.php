@@ -23,7 +23,7 @@
 <body>
 
     @include('partials/navbar')
-    
+
     @include('partials/slider', ['banner' => $banner])
 
 
@@ -593,9 +593,7 @@
 <script src="../../../code.tidio.co_443/ukbzkumwslzb2mxazsvwu2r0hnenldtf.js" async></script>
 <!--End of  Live Chat  Script-->
 
-<a href="https://1.envato.market/ainext-wp" target="_blank" class="ahs-purchase hide-on-mobile" title="Intro Offer - Hurry up!">WordPress Version</a>
-
-
+    <a href="{{ route('download.catalogue') }}" class="ahs-purchase hide-on-mobile" title="Download our product catalogue">Download Catalogue</a>
 
 <!-- Js Linked -->
 <script src="{{asset('assets/js/jquery.min.js')}}"></script>
