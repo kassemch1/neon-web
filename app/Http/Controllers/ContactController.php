@@ -1,0 +1,88 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Contact;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+class ContactController extends Controller
+{
+    /**
+     * Store a contact message.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function submitForm(Request $request)
+    {
+        // Create a validator instance with custom rules and messages
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|max:255',
+            'message' => [
+                'required',
+                'string',
+                'min:10',
+                'max:150'
+            ],
+        ], [
+            'message.min' => 'Your message must be at least 10 characters long.',
+            'message.max' => 'Your message cannot exceed 150 characters.',
+            'email.required' => 'Email address is required.',
+            'email.email' => 'Please enter a valid email address.',
+            'message.required' => 'Message is required.'
+        ]);
+
+        // Check if validation fails
+        if ($validator->fails()) {
+            // For Ajax requests, return validation errors
+            if ($request->ajax()) {
+                return response()->json([
+                    'success' => false,
+                    'errors' => $validator->errors()->all()
+                ], 422);
+            }
+
+            // For non-Ajax requests, redirect back with errors
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        // If validation passes, create the contact
+        try {
+            $validated = $validator->validated();
+            Contact::create($validated);
+
+            // Ajax success response
+            if ($request->ajax()) {
+                return response()->json([
+                    'success' => true,
+                    'message' => 'Thank you for contacting us! We will get back to you soon.'
+                ]);
+            }
+
+            // Non-Ajax success redirect
+            return redirect()->back()->with('success', 'Thank you for contacting us! We will get back to you soon.');
+        } catch (\Exception $e) {
+            // Log the error
+            \Log::error('Contact form submission error: ' . $e->getMessage());
+
+            // Ajax error response
+            if ($request->ajax()) {
+                return response()->json([
+                    'success' => false,
+                    'errors' => ['An unexpected error occurred. Please try again later.']
+                ], 500);
+            }
+
+            // Non-Ajax error redirect
+            return redirect()->back()->with('error', 'An unexpected error occurred. Please try again later.');
+        }
+    }
+
+
+    public function showContactForm()
+    {
+        return view('contact');
+    }
+}
