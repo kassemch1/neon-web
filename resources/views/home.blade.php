@@ -309,7 +309,7 @@
     </div>
 </div>
 <!-- End Gallery Area -->
-
+@include('partials/faqs')
 <!-- Start Testimonial Area -->
 <div class="testimonial-area ptb-100">
     <div class="container">
