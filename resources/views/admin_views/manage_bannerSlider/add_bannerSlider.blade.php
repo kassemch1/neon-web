@@ -43,7 +43,7 @@
                                 <th>Image 2</th>
                                 <th>Image 3</th>
                                 <th>Image 4</th>
-                                <th>Action</th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -60,9 +60,7 @@
                                 <td>
                                     <input type="file" name="image4">
                                 </td>
-                                <td rowspan="2">
-                                    <button type="submit">Submit</button>
-                                </td>
+                                
                             </tr>
                             <tr>
                                 <td>
@@ -86,13 +84,15 @@
 
                                     @endif
                                 </td>
-                                <td>
-                                    <button type="button">Edit</button>
-                                    <button type="button">Delete</button>
-                                </td>
+                                
                             </tr>
                         </tbody>
                     </table>
+                    <div class="row">
+                        <div class="d-flex flex-wrap justify-content-end col mbn-10">
+                            <button class="button button-outline button-primary mb-10 ml-10 mr-0" type="submit" id="submitBtn">Save & Publish</button>
+                        </div><!-- Button Group End -->
+                    </div>
                 </form>
                 
                 
@@ -118,6 +118,25 @@
 <script src="{{ asset('admin_assets/js/vendor/jquery-3.3.1.min.js') }}"></script>
 <script src="{{ asset('admin_assets/js/vendor/bootstrap.min.js') }}"></script>
 <script src="{{ asset('admin_assets/js/plugins/filepond/filepond.min.js') }}"></script>
+<!-- Global Vendor, plugins & Activation JS -->
+<script src={{asset("admin_assets/js/vendor/modernizr-3.6.0.min.js")}}></script>
+<script src={{asset("admin_assets/js/vendor/jquery-3.3.1.min.js")}}></script>
+<script src={{asset("admin_assets/js/vendor/popper.min.js")}}></script>
+<script src={{asset("admin_assets/js/vendor/bootstrap.min.js")}}></script>
+<!--Plugins JS-->
+<script src={{asset("admin_assets/js/plugins/perfect-scrollbar.min.js")}}></script>
+<script src={{asset("admin_assets/js/plugins/tippy4.min.js.js")}}></script>
+<!--Main JS-->
+<script src={{asset("admin_assets/js/main.js")}}></script>
+
+<!-- Plugins & Activation JS For Only This Page -->
+<script src={{asset("admin_assets/js/plugins/nice-select/jquery.nice-select.min.js")}}></script>
+<script src={{asset("admin_assets/js/plugins/nice-select/niceSelect.active.js")}}></script>
+<script src={{asset("admin_assets/js/plugins/filepond/filepond.min.js")}}></script>
+<script src={{asset("admin_assets/js/plugins/filepond/filepond-plugin-image-exif-orientation.min.js")}}></script>
+<script src={{asset("admin_assets/js/plugins/filepond/filepond-plugin-image-preview.min.js")}}></script>
+<script src={{asset("admin_assets/js/plugins/filepond/filepond.active.js")}}></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
         $('#bannerForm').submit(function (e) {

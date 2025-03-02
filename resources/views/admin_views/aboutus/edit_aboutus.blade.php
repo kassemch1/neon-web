@@ -69,22 +69,22 @@
         <div class="add-edit-product-wrap col-12">
 
             <div class="add-edit-product-form">
-                <form id="companyInfoForm" method="post" action="">
+                <form id="companyInfoForm" method="post" action="{{route('aboutus.update')}}">
                     @csrf
                     <h4 class="title">Numbers</h4>
 
                     <div class="row">
                         <div class="col-lg-6 col-12 mb-30">
                             <label for="">Clients</label>
-                            <input name="clients" class="form-control" type="number" min="1" placeholder="Clients" value="">
+                            <input name="clients" class="form-control" type="number" min="1" placeholder="Clients" value="{{$aboutus->clients}}">
                         </div>
                         <div class="col-lg-6 col-12 mb-30">
                             <label for="">Years in Operation</label>
-                            <input name="years" class="form-control" type="number" min="1" placeholder="Years in Operation" value="">
+                            <input name="years" class="form-control" type="number" min="1" placeholder="Years in Operation" value="{{$aboutus->years}}">
                         </div>
                         <div class="col-12 mb-30">
                             <label for="">Description</label>
-                            <textarea name="description" class="form-control"></textarea>
+                            <textarea name="description" class="form-control">{{$aboutus->description}}</textarea>
                             @if ($errors->has('description'))
                                 <span class="text-danger">{{ $errors->first('description') }}</span>
                             @endif
@@ -160,7 +160,7 @@
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                type: 'PUT',
+                type: 'POST',
                 url: $(this).attr('action'), // Use form's action attribute as URL
                 data: formData,
                 success: function(response) {

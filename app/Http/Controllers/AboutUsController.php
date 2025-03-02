@@ -26,4 +26,22 @@ class AboutUsController extends Controller
             'aboutus'=>$aboutus
         ]);
     }
+    public function update(Request $request)
+    {
+        // Validate the incoming request data
+        $validatedData = $request->validate( [
+            'years' => 'required|numeric|min:1',
+            'clients' => 'required|numeric|min:1',
+            'description'=>'required|string'
+        ]);
+        $aboutus=AboutUs::firstOrFail();
+
+        $aboutus->clients=$validatedData['clients'];
+        $aboutus->years=$validatedData['years'];
+        $aboutus->description=$validatedData['description'];
+        $aboutus->save();
+
+        return response()->json(['message' => 'Data updated successfully'], 200);
+    }
+
 }
