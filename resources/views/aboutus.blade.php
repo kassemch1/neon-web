@@ -94,7 +94,7 @@
 
 @include('partials/navbar')
 
-@include('partials/slider', ['banner' => $banner])
+{{--@include('partials/slider', ['banner' => $banner])--}}
 
 <!-- Start Section Banner -->
 <div class="section-banner">
