@@ -74,7 +74,7 @@
 
                         <div class="col-12 mb-30">
                             <label for="">Name</label>
-                            <textarea name="name" class="form-control">{{ old('name', $slider->name) }}</textarea>
+                            <input name="name" class="form-control"  value="{{ old('name', $slider->name) }}"></input>
                             @if ($errors->has('name'))
                                 <span class="text-danger">{{ $errors->first('name') }}</span>
                             @endif

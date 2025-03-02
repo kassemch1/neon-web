@@ -36,7 +36,7 @@ class SliderController extends Controller
         $request->validate([
             'images' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'secondImage' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'description' => 'required|string|max:255',
+            'description' => 'required|string|max:500',
             'name' => 'required|string|max:30',
         ]);
 

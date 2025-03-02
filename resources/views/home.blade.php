@@ -431,15 +431,15 @@
                 <div class="article-content owl-carousel owl-theme" >
                     @foreach($sliders as $slider)
                     <div class="item">
-                        <img src="{{asset($slider->images)}}" alt="image" style="height:500px">
+                        <a href="{{ route('slider.show', $slider->id) }}"> <img src="{{asset($slider->images)}}" alt="image" style="height:350px" ></a>
                         <div class="pop-content">
-                            <h3><a href="blog-details.html">{{$slider->name}}</a></h3>
+                            <h3><a href="{{ route('slider.show', $slider->id) }}">{{$slider->name}}</a></h3>
 {{--                            <ul>--}}
 {{--                                <li>{{$slider->created_at}}</li>--}}
 {{--                                <li><span>0</span>Comments</li>--}}
 {{--                            </ul>--}}
                         </div>
-                        <a href="blog-details.html">
+                        <a href="{{ route('slider.show', $slider->id) }}">
                             <div class="go-corner">
                                 <div class="go-arrow">
                                     <i class="ri-arrow-right-up-line"></i>
