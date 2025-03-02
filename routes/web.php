@@ -9,6 +9,7 @@ require __DIR__. '/admin.php';
 require __DIR__. '/slider.php';
 require __DIR__. '/subscribe.php';
 require __DIR__. '/aboutus.php';
+require __DIR__. '/single.php';
 
 Route::get('/', [HomeController::class, 'index']);
 
