@@ -506,75 +506,8 @@
 </div>
 <!-- End Article Area -->
 
-<!-- Start Insta Gallery -->
-<div class="insta-gallery">
-    <div class="conatiner-fluid">
-        <div class="ins-gallery owl-carousel owl-theme">
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-1.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-10.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-2.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-3.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-4.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-5.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-6.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-7.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-8.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-9.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Insta Gallery -->
 
+@include('partials/gallery')
 
 @include('partials/footer')
 
