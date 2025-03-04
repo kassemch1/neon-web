@@ -93,7 +93,7 @@
 
                         <div class="col-12 mb-30">
                             <label for="">Name</label>
-                            <textarea name="name" class="form-control"></textarea>
+                            <input name="name" class="form-control"></input>
                             @if ($errors->has('name'))
                                 <span class="text-danger">{{ $errors->first('name') }}</span>
                             @endif
