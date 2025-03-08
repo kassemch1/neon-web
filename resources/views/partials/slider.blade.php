@@ -9,37 +9,6 @@
                     <!--<span class="banner-top-title">Fully Dynamic</span>-->
                     <h1><span class="grd-color-1" >Lostineon</span> Transforming spaces with dazzling neon signs</h1>
                     <p>Create production-quality visual assets for your projects with unprecedented quality, speed, and style-consistency.</p>
-                 <!--   <div class="searchwrapper">
-                        <div class="searchbox">
-                            <div class="row align-items-center">
-                                <div class="col-md-6">
-                                    <form>
-                                        <input type="text" class="form-control" placeholder="Search by Keywords...">
-                                    </form>
-                                </div>
-                                <div class="col-md-3">
-                                    <select class="form-control category" id="provider" name="provider">
-                                        <option>deepai</option>
-                                        <option>stabilityai</option>
-                                        <option>replicate</option>
-                                        <option>openai</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-3">
-                                    <form>
-                                        <button class="btn" type="submit">Generate</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                   <!-- <div class="popular-tag">
-                        <p>Popular Tag:</p>
-                        <a href="blog.html">Business</a>
-                        <a href="blog.html">Animation</a>
-                        <a href="blog.html">Creative</a>
-                        <a href="blog.html">Realistic</a>
-                    </div> -->
                 </div>
             </div>
             <div class="col-lg-8" >
@@ -47,22 +16,22 @@
                     <div class="col-lg-8">
                         @if($banner)
                         <div class="banner-content owl-carousel owl-theme " style=" width:900px " >
-                            <div class="item" style="height: 420px ; width : 290px"> 
-                                <img src="{{ asset('storage/'  . $banner->image1) }}" alt="image" style="height: 420px ; border-radius: 16px;"> 
-                                
+                            <div class="item" style="height: 360px ; width : 290px">
+                                <img src="{{ asset('storage/'  . $banner->image1) }}" alt="image" style="height: 360px ; border-radius: 16px; object-fit: cover">
+
                             </div>
-                            <div class="item" style="height: 420px ; width : 290px"> 
-                                <img src="{{ asset('storage/'  . $banner->image2) }}" alt="image" style="height: 420px ; border-radius: 16px;">
-                            
-                        
+                            <div class="item" style="height: 360px ; width : 290px">
+                                <img src="{{ asset('storage/'  . $banner->image2) }}" alt="image" style="height: 360px ; border-radius: 16px; object-fit: cover">
+
+
                             </div>
-                            <div class="item" style="height: 420px ; width : 290px">
-                                <img src="{{ asset('storage/'  . $banner->image3) }}" alt="image" style="height: 420px ; border-radius: 16px;" >
-                                
+                            <div class="item" style="height: 360px ; width : 290px">
+                                <img src="{{ asset('storage/'  . $banner->image3) }}" alt="image" style="height: 360px ; border-radius: 16px; object-fit: cover" >
+
                             </div>
-                            <div class="item" style="height: 420px ; width : 290px">
-                                <img src="{{ asset('storage/'  . $banner->image4) }}" alt="image" style="height: 420px ; border-radius: 16px;">
-                                
+                            <div class="item" style="height: 360px ; width : 290px">
+                                <img src="{{ asset('storage/'  . $banner->image4) }}" alt="image" style="height: 360px ; border-radius: 16px; object-fit: cover">
+
                             </div>
                         </div>
                         @else
