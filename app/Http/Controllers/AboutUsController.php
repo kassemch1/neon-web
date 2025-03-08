@@ -5,25 +5,33 @@ namespace App\Http\Controllers;
 use App\Models\AboutUs;
 use App\Models\BannerSlider;
 use Illuminate\Http\Request;
+use App\Models\Slider;
+use App\Models\Faq;
 
 class AboutUsController extends Controller
 {
     public function index()
     {
-        $aboutus=AboutUs::firstOrFail();
+        $sliders=Slider::all();
+        $aboutus=AboutUs::first();
         return view('admin_views/aboutus/edit_aboutus',[
-            'aboutus'=>$aboutus
+            'aboutus'=>$aboutus,
+            
         ]);
     }
 
     public function index_user()
     {
+        $sliders=Slider::all();
+        $faqs=Faq::all();
         $banner = BannerSlider::first();
-        $aboutus=AboutUs::firstOrFail();
+        $aboutus=AboutUs::first();
 
         return view('aboutus',[
             'banner'=>$banner,
-            'aboutus'=>$aboutus
+            'aboutus'=>$aboutus,
+            'sliders'=>$sliders,
+            'faqs'=>$faqs,
         ]);
     }
     public function update(Request $request)
@@ -34,7 +42,11 @@ class AboutUsController extends Controller
             'clients' => 'required|numeric|min:1',
             'description'=>'required|string'
         ]);
-        $aboutus=AboutUs::firstOrFail();
+        $aboutus=AboutUs::first();
+
+        if (!$aboutus) {
+            $aboutus = new AboutUs();
+        }
 
         $aboutus->clients=$validatedData['clients'];
         $aboutus->years=$validatedData['years'];
