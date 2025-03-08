@@ -31,6 +31,7 @@
     @include('partials/faqs')
     
 <!-- Start Testimonial Area -->
+<!--
 <div class="testimonial-area ptb-100">
     <div class="container">
         <div class="testimonial-content owl-carousel owl-theme">
@@ -78,6 +79,7 @@
     <div class="star"></div>
     <div class="star"></div>
 </div>
+-->
 <!-- End Testimonial Area -->
 
 
