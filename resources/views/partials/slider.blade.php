@@ -67,5 +67,4 @@
 .item img {
   border-radius: 16px; /* Rounded corners for image */
 }
-
     </style>

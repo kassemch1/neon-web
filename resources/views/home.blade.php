@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AiNext - AI Agency & Startup HTML Template</title>
+    <title>ArmaCadabra</title>
 
     <!-- CSS Linked -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -20,16 +20,46 @@
     <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.png')}}">
 
 </head>
+<style>
+    .whatsapp-button {
+        position: fixed;
+        bottom: 115px;
+        right: 55px;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        padding: 15px;
+        font-size: 24px;
+        text-align: center;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+    @media (max-width: 768px) {
+        .whatsapp-button {
+            right: 20px; /* Shift more to the right */
+            bottom: 80px; /* Adjust position slightly */
+            padding: 10px; /* Reduce padding */
+            font-size: 18px; /* Decrease font size */
+        }
+    }
+</style>
+
+<a href="https://wa.me/71742224" class="whatsapp-button" target="_blank">
+    &#x1F4AC;
+</a>
+
 <body>
 
-    @include('partials/navbar')
+@include('partials/navbar')
 
-    @include('partials/slider', ['banner' => $banner])
+@include('partials/slider', ['banner' => $banner])
 
-    @include('partials.aboutus')
-     
-    @include('partials/faqs')
-    
+@include('partials.features')
+
+@include('partials.aboutus')
+
+@include('partials/faqs')
+
 <!-- Start Testimonial Area -->
 <!--
 <div class="testimonial-area ptb-100">
@@ -83,7 +113,6 @@
 <!-- End Testimonial Area -->
 
 
-
 <!-- Start Article Area -->
 <div class="article-area ptb-100">
     <div class="container">
@@ -98,77 +127,79 @@
                 </div>
             </div>
             <div class="col-lg-8">
-                <div class="article-content owl-carousel owl-theme" >
+                <div class="article-content owl-carousel owl-theme">
                     @foreach($sliders as $slider)
-                    <div class="item">
-                        <a href="{{ route('slider.show', $slider->id) }}"> <img src="{{asset($slider->images)}}" alt="image" style="height:350px" ></a>
-                        <div class="pop-content">
-                            <h3><a href="{{ route('slider.show', $slider->id) }}">{{$slider->name}}</a></h3>
-{{--                            <ul>--}}
-{{--                                <li>{{$slider->created_at}}</li>--}}
-{{--                                <li><span>0</span>Comments</li>--}}
-{{--                            </ul>--}}
-                        </div>
-                        <a href="{{ route('slider.show', $slider->id) }}">
-                            <div class="go-corner">
-                                <div class="go-arrow">
-                                    <i class="ri-arrow-right-up-line"></i>
-                                </div>
+                        <div class="item">
+                            <a href="{{ route('slider.show', $slider->id) }}"> <img src="{{asset($slider->images)}}"
+                                                                                    alt="image"
+                                                                                    style="height:350px"></a>
+                            <div class="pop-content">
+                                <h3><a href="{{ route('slider.show', $slider->id) }}">{{$slider->name}}</a></h3>
+                                {{--                            <ul>--}}
+                                {{--                                <li>{{$slider->created_at}}</li>--}}
+                                {{--                                <li><span>0</span>Comments</li>--}}
+                                {{--                            </ul>--}}
                             </div>
-                        </a>
-                    </div>
+                            <a href="{{ route('slider.show', $slider->id) }}">
+                                <div class="go-corner">
+                                    <div class="go-arrow">
+                                        <i class="ri-arrow-right-up-line"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     @endforeach
-{{--                    <div class="item">--}}
-{{--                        <img src="assets/img/blogs/artical-3.jpg" alt="image">--}}
-{{--                        <div class="pop-content">--}}
-{{--                            <h3><a href="blog-details.html">The actual history of machine intelligence</a></h3>--}}
-{{--                            <ul>--}}
-{{--                                <li>March 18, 2022</li>--}}
-{{--                                <li><span>0</span>Comments</li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                        <a href="blog-details.html">--}}
-{{--                            <div class="go-corner">--}}
-{{--                                <div class="go-arrow">--}}
-{{--                                    <i class="ri-arrow-right-up-line"></i>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                    <div class="item">--}}
-{{--                        <img src="assets/img/blogs/artical-2.jpg" alt="image">--}}
-{{--                        <div class="pop-content">--}}
-{{--                            <h3><a href="blog-details.html">The actual history of machine intelligence</a></h3>--}}
-{{--                            <ul>--}}
-{{--                                <li>March 18, 2022</li>--}}
-{{--                                <li><span>0</span>Comments</li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                        <a href="blog-details.html">--}}
-{{--                            <div class="go-corner">--}}
-{{--                                <div class="go-arrow">--}}
-{{--                                    <i class="ri-arrow-right-up-line"></i>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
-{{--                    <div class="item">--}}
-{{--                        <img src="assets/img/blogs/artical-4.jpg" alt="image">--}}
-{{--                        <div class="pop-content">--}}
-{{--                            <h3><a href="blog-details.html">The actual history of machine intelligence</a></h3>--}}
-{{--                            <ul>--}}
-{{--                                <li>March 18, 2022</li>--}}
-{{--                                <li><span>0</span>Comments</li>--}}
-{{--                            </ul>--}}
-{{--                        </div>--}}
-{{--                        <a href="blog-details.html">--}}
-{{--                            <div class="go-corner">--}}
-{{--                                <div class="go-arrow">--}}
-{{--                                    <i class="ri-arrow-right-up-line"></i>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </a>--}}
-{{--                    </div>--}}
+                    {{--                    <div class="item">--}}
+                    {{--                        <img src="assets/img/blogs/artical-3.jpg" alt="image">--}}
+                    {{--                        <div class="pop-content">--}}
+                    {{--                            <h3><a href="blog-details.html">The actual history of machine intelligence</a></h3>--}}
+                    {{--                            <ul>--}}
+                    {{--                                <li>March 18, 2022</li>--}}
+                    {{--                                <li><span>0</span>Comments</li>--}}
+                    {{--                            </ul>--}}
+                    {{--                        </div>--}}
+                    {{--                        <a href="blog-details.html">--}}
+                    {{--                            <div class="go-corner">--}}
+                    {{--                                <div class="go-arrow">--}}
+                    {{--                                    <i class="ri-arrow-right-up-line"></i>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </a>--}}
+                    {{--                    </div>--}}
+                    {{--                    <div class="item">--}}
+                    {{--                        <img src="assets/img/blogs/artical-2.jpg" alt="image">--}}
+                    {{--                        <div class="pop-content">--}}
+                    {{--                            <h3><a href="blog-details.html">The actual history of machine intelligence</a></h3>--}}
+                    {{--                            <ul>--}}
+                    {{--                                <li>March 18, 2022</li>--}}
+                    {{--                                <li><span>0</span>Comments</li>--}}
+                    {{--                            </ul>--}}
+                    {{--                        </div>--}}
+                    {{--                        <a href="blog-details.html">--}}
+                    {{--                            <div class="go-corner">--}}
+                    {{--                                <div class="go-arrow">--}}
+                    {{--                                    <i class="ri-arrow-right-up-line"></i>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </a>--}}
+                    {{--                    </div>--}}
+                    {{--                    <div class="item">--}}
+                    {{--                        <img src="assets/img/blogs/artical-4.jpg" alt="image">--}}
+                    {{--                        <div class="pop-content">--}}
+                    {{--                            <h3><a href="blog-details.html">The actual history of machine intelligence</a></h3>--}}
+                    {{--                            <ul>--}}
+                    {{--                                <li>March 18, 2022</li>--}}
+                    {{--                                <li><span>0</span>Comments</li>--}}
+                    {{--                            </ul>--}}
+                    {{--                        </div>--}}
+                    {{--                        <a href="blog-details.html">--}}
+                    {{--                            <div class="go-corner">--}}
+                    {{--                                <div class="go-arrow">--}}
+                    {{--                                    <i class="ri-arrow-right-up-line"></i>--}}
+                    {{--                                </div>--}}
+                    {{--                            </div>--}}
+                    {{--                        </a>--}}
+                    {{--                    </div>--}}
                 </div>
             </div>
         </div>
@@ -190,13 +221,24 @@
 <!-- End Top to Bottom -->
 
 <!--Start Popup Script-->
-<script data-cfasync="false">(function(w,i,s,e){window[w]=window[w]||function(){(window[w].q=window[w].q||[]).push(arguments)};window[w].l=Date.now();s=document.createElement('script');e=document.getElementsByTagName('script')[0];s.defer=1;s.src=i;e.parentNode.insertBefore(s, e)})('wisepops', '../../../wisepops.net/loader5c69.html?v=2&amp;h=HzBeEscjD9');</script>
+{{--<script data-cfasync="false">(function (w, i, s, e) {--}}
+{{--        window[w] = window[w] || function () {--}}
+{{--            (window[w].q = window[w].q || []).push(arguments)--}}
+{{--        };--}}
+{{--        window[w].l = Date.now();--}}
+{{--        s = document.createElement('script');--}}
+{{--        e = document.getElementsByTagName('script')[0];--}}
+{{--        s.defer = 1;--}}
+{{--        s.src = i;--}}
+{{--        e.parentNode.insertBefore(s, e)--}}
+{{--    })('wisepops', '../../../wisepops.net/loader5c69.html?v=2&amp;h=HzBeEscjD9');</script>--}}
 
 <!--Start of Live Chat Script-->
-<script src="../../../code.tidio.co_443/ukbzkumwslzb2mxazsvwu2r0hnenldtf.js" async></script>
+{{--<script src="../../../code.tidio.co_443/ukbzkumwslzb2mxazsvwu2r0hnenldtf.js" async></script>--}}
 <!--End of  Live Chat  Script-->
 
-    <a href="{{ route('download.catalogue') }}" class="ahs-purchase hide-on-mobile" title="Download our product catalogue">Download Catalogue</a>
+<a href="{{ route('download.catalogue') }}" class="ahs-purchase hide-on-mobile" title="Download our product catalogue">Download
+    Catalogue</a>
 
 <!-- Js Linked -->
 <script src="{{asset('assets/js/jquery.min.js')}}"></script>

@@ -193,11 +193,11 @@
                         @foreach($leftColumnFaqs as $index => $faq)
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
-                                    <button class="accordion-button {{ $index > 0 ? 'collapsed' : '' }}" type="button" data-bs-toggle="collapse" data-bs-target="#faqLeft{{ $faq->id }}" aria-expanded="{{ $index === 0 ? 'true' : 'false' }}" aria-controls="faqLeft{{ $faq->id }}">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqLeft{{ $faq->id }}" aria-expanded="{{ $index === 0 ? 'true' : 'false' }}" aria-controls="faqLeft{{ $faq->id }}">
                                         {{ $faq->question }}
                                     </button>
                                 </h2>
-                                <div id="faqLeft{{ $faq->id }}" class="accordion-collapse collapse {{ $index === 0 ? 'show' : '' }}" data-bs-parent="#faqAccordionLeft">
+                                <div id="faqLeft{{ $faq->id }}" class="accordion-collapse collapse" data-bs-parent="#faqAccordionLeft">
                                     <div class="accordion-body">
                                         {{ $faq->answer }}
                                     </div>
