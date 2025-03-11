@@ -67,4 +67,29 @@
 .item img {
   border-radius: 16px; /* Rounded corners for image */
 }
+
+@media (max-width: 768px) {
+        .content {
+            margin-top: 0; /* Remove margin-top on mobile */
+        }
+
+        .banner-area {
+            height: auto; /* Adjust height for mobile */
+        }
+
+        .content h1 {
+            font-size: 1.8rem; /* Adjust font size for smaller screens */
+        }
+
+        .content p {
+            font-size: 0.9rem; /* Adjust paragraph font size */
+        }
+
+        .owl-carousel .item {
+            width: 100%; /* Make each item take full width */
+        }
+    }
+
     </style>
+
+    
