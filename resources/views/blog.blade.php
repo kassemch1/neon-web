@@ -92,7 +92,23 @@
 
     <style>
 
-        
+@media (max-width: 768px) { 
+    #search-form {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center; /* Center align */
+    }
+
+    #search-input {
+        width: 70% !important; /* Adjust width */
+    }
+
+    #search-form button {
+        width: 30% !important; /* Ensure button is beside input */
+        margin-left: 5px; /* Small gap between input and button */
+    }
+}
+
         </style>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

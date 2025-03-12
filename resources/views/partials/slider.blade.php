@@ -15,25 +15,21 @@
                 <div class="image" >
                     <div class="col-lg-8">
                         @if($banner)
-                        <div class="banner-content owl-carousel owl-theme " style=" width:900px " >
-                            <div class="item" style="height: 360px ; width : 290px">
-                                <img src="{{ asset('storage/'  . $banner->image1) }}" alt="image" style="height: 360px ; border-radius: 16px; object-fit: cover">
-
+                        <div class="banner-content owl-carousel owl-theme">
+                            <div class="item">
+                                <img src="{{ asset('storage/'  . $banner->image1) }}" alt="image">
                             </div>
-                            <div class="item" style="height: 360px ; width : 290px">
-                                <img src="{{ asset('storage/'  . $banner->image2) }}" alt="image" style="height: 360px ; border-radius: 16px; object-fit: cover">
-
-
+                            <div class="item">
+                                <img src="{{ asset('storage/'  . $banner->image2) }}" alt="image">
                             </div>
-                            <div class="item" style="height: 360px ; width : 290px">
-                                <img src="{{ asset('storage/'  . $banner->image3) }}" alt="image" style="height: 360px ; border-radius: 16px; object-fit: cover" >
-
+                            <div class="item">
+                                <img src="{{ asset('storage/'  . $banner->image3) }}" alt="image">
                             </div>
-                            <div class="item" style="height: 360px ; width : 290px">
-                                <img src="{{ asset('storage/'  . $banner->image4) }}" alt="image" style="height: 360px ; border-radius: 16px; object-fit: cover">
-
+                            <div class="item">
+                                <img src="{{ asset('storage/'  . $banner->image4) }}" alt="image">
                             </div>
                         </div>
+                        
                         @else
                         <div><h1>Please Add images to the slider</h1></div>
                         @endif
@@ -51,12 +47,20 @@
 <!-- End Banner Area -->
 
 <style>
+
+   
+.banner-content {
+    width: 900px; 
+}
+
     .item {
   padding: 3px; /* Space between border and image */
   border-radius: 20px;
   background: linear-gradient(135deg, #a18cd1, #6d83f2, #8ec5fc, #b9fbc0);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 360px; 
+    width: 290px;
 }
 
 .item:hover {
@@ -65,10 +69,17 @@
 }
 
 .item img {
-  border-radius: 16px; /* Rounded corners for image */
+  height: 360px; 
+    border-radius: 16px; 
+    object-fit: cover; 
 }
 
 @media (max-width: 768px) {
+
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
         .content {
             margin-top: 0; /* Remove margin-top on mobile */
         }
@@ -85,9 +96,37 @@
             font-size: 0.9rem; /* Adjust paragraph font size */
         }
 
-        .owl-carousel .item {
-            width: 100%; /* Make each item take full width */
+        
+
+        .scroll-down{
+            display: none;
         }
+
+        
+        
+
+        .banner-content {
+        width: 100%; /* Ensure the banner takes 100% of the screen width */
+        margin: 0 auto; /* Center the content horizontally */
+    }
+
+    .item {
+        width: 100%; /* Set the width of each item to 100% on mobile */
+        height: 300px; /* Optional: Adjust height of items for better scaling on mobile */
+        display: flex; /* Use flexbox for centering */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+    }
+
+    .item img {
+        width: 100%; /* Ensure the image fills the entire width of the item */
+        height: 100%; /* Adjust the height to cover the entire area */
+    }
+
+    .image{
+      margin-right: 22px
+    }
+
     }
 
     </style>

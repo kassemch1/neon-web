@@ -23,3 +23,19 @@
         @endforeach
     @endif
 </div>
+
+
+
+<style>
+@media (max-width: 768px) { 
+    /* Reduce the height of the blog items only on mobile */
+    .item {
+        height: 250px !important; /* Adjust height for mobile */
+    }
+
+    .item img {
+        height: 250px !important; /* Ensure image follows the new height */
+    }
+}
+
+    </style>
