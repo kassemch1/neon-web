@@ -141,7 +141,7 @@
 	});
 
 	// Banner Slider
-	$('.banner-content').owlCarousel({
+	$('.banner-content_banner').owlCarousel({
 		dots: false,
 		nav: false,
 		loop: true,

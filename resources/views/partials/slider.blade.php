@@ -15,17 +15,17 @@
                 <div class="image" >
                     <div class="col-lg-8">
                         @if($banner)
-                        <div class="banner-content owl-carousel owl-theme">
-                            <div class="item">
+                        <div class="banner-content_banner owl-carousel owl-theme">
+                            <div class="item_banner">
                                 <img src="{{ asset('storage/'  . $banner->image1) }}" alt="image">
                             </div>
-                            <div class="item">
+                            <div class="item_banner">
                                 <img src="{{ asset('storage/'  . $banner->image2) }}" alt="image">
                             </div>
-                            <div class="item">
+                            <div class="item_banner">
                                 <img src="{{ asset('storage/'  . $banner->image3) }}" alt="image">
                             </div>
-                            <div class="item">
+                            <div class="item_banner">
                                 <img src="{{ asset('storage/'  . $banner->image4) }}" alt="image">
                             </div>
                         </div>
@@ -49,11 +49,11 @@
 <style>
 
    
-.banner-content {
+.banner-content_banner {
     width: 900px; 
 }
 
-    .item {
+    .item_banner {
   padding: 3px; /* Space between border and image */
   border-radius: 20px;
   background: linear-gradient(135deg, #a18cd1, #6d83f2, #8ec5fc, #b9fbc0);
@@ -63,11 +63,25 @@
     width: 290px;
 }
 
-.item:hover {
+.item {
+  padding: 3px; /* Space between border and image */
+  border-radius: 20px;
+  background: linear-gradient(135deg, #a18cd1, #6d83f2, #8ec5fc, #b9fbc0);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+ 
+}
+
+.item_banner:hover {
   transform: scale(1.01); /* Slight zoom on hover */
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9); /* Enhanced shadow on hover */
 }
 
+.item_banner img {
+  height: 360px; 
+    border-radius: 16px; 
+    object-fit: cover; 
+}
 .item img {
   height: 360px; 
     border-radius: 16px; 
@@ -105,12 +119,12 @@
         
         
 
-        .banner-content {
+        .banner-content_banner {
         width: 100%; /* Ensure the banner takes 100% of the screen width */
         margin: 0 auto; /* Center the content horizontally */
     }
 
-    .item {
+    .item_banner {
         width: 100%; /* Set the width of each item to 100% on mobile */
         height: 300px; /* Optional: Adjust height of items for better scaling on mobile */
         display: flex; /* Use flexbox for centering */
@@ -118,7 +132,7 @@
         align-items: center; /* Center content vertically */
     }
 
-    .item img {
+    .item_banner img {
         width: 100%; /* Ensure the image fills the entire width of the item */
         height: 100%; /* Adjust the height to cover the entire area */
     }
