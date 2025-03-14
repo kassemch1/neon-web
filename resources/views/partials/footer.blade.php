@@ -64,7 +64,10 @@
         </div>
         <div class="pr-line"></div>
         <div class="footer-bottom-area">
-            <p>© Copyright | <a href="https://alhikmahsoft.com/" target="_blank">AlHikmahSoft</a>  | All Rights Reserved is Proudly </p>
+            <span class="item-content">
+                        © 2025 ArmaCadabra, All rights reserved.<br> Powered by <a href="https://www.tawwer.tech/" target="_blank">Tawwer</a>.
+                    </span>
+{{--            <p>© Copyright | <a href="https://tawwer.tech/" target="_blank">Tawwer</a>  | All Rights Reserved is Proudly </p>--}}
         </div>
     </div>
     <div class="lines">

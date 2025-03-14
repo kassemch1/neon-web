@@ -84,7 +84,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="image">
-                    <img src="assets/img/contact.jpg" alt="image">
+                    <img src="assets/img/contact.jpg" alt="image" loading="lazy">
                 </div>
             </div>
         </div>
@@ -92,74 +92,6 @@
 </div>
 <!-- End Contact Area -->
 
-<!-- Start Insta Gallery Area -->
-<div class="insta-gallery">
-    <div class="conatiner-fluid">
-        <div class="ins-gallery owl-carousel owl-theme">
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-1.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-10.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-2.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-3.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-4.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-5.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-6.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-7.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-8.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-            <div class="items">
-                <a href="https://www.instagram.com/" target="_blank" >
-                    <img src="assets/img/gallery/insta-9.jpg" alt="image">
-                    <i class="ri-instagram-line"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Insta Gallery Area -->
 
 @include('partials/footer')
 
@@ -168,13 +100,6 @@
     <span id="progress-value"><i class="ri-arrow-up-line"></i></span>
 </div>
 <!-- End Top to Bottom -->
-<!--Start Popup Script-->
-<script data-cfasync="false">(function(w,i,s,e){window[w]=window[w]||function(){(window[w].q=window[w].q||[]).push(arguments)};window[w].l=Date.now();s=document.createElement('script');e=document.getElementsByTagName('script')[0];s.defer=1;s.src=i;e.parentNode.insertBefore(s, e)})('wisepops', '../../../wisepops.net/loader5c69.html?v=2&amp;h=HzBeEscjD9');</script>
-
-<!--Start of Live Chat Script-->
-<script src="../../../code.tidio.co_443/ukbzkumwslzb2mxazsvwu2r0hnenldtf.js" async></script>
-<!--End of  Live Chat  Script-->
-
 <!-- Js Linked -->
 <script src="{{asset('assets/js/jquery.min.js')}}"></script>
 <script src="{{asset('assets/js/bootstrap.bundle.min.js')}}"></script>

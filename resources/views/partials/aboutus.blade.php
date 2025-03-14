@@ -4,7 +4,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="image">
-                    <img src="assets/img/about-2.jpg" alt="image">
+                    <img src="assets/img/about-2.jpg" alt="image" loading="lazy">
                 </div>
             </div>
             <div class="col-lg-6">

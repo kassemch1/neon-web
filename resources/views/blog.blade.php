@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<!-- Mirrored from demo.alhikmahsoft.com/template/ainext/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Feb 2025 17:43:03 GMT -->
+
+
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,15 +17,33 @@
         <link rel="stylesheet" href="assets/css/aos.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <link rel="stylesheet" href="assets/css/responsive.css">
-        
 
 
-        
-        
+
+
+
         <!-- favicon Linked -->
         <link rel="icon" type="image/png" href="assets/img/favicon.png">
 
     </head>
+<style>
+    #search-input:focus {
+        outline: none;
+        box-shadow: 0 0 15px rgba(225, 0, 255, 0.2);
+        border-color: #E100FF;
+    }
+
+    #search-form button:hover i {
+        transform: scale(1.1);
+        color: #FF45E9;
+    }
+
+    @media (max-width: 768px) {
+        #search-form {
+            max-width: 90%;
+        }
+    }
+</style>
     <body>
 
         @include('partials.navbar')
@@ -34,11 +52,11 @@
         <div class="section-banner">
             <div class="container">
                 <div class="section-banner-title">
-                    <h1>Blog Grid</h1>
+                    <h1>Gallery</h1>
                     <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Blog Grid</li>
+                            <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Gallery</li>
                         </ol>
                     </nav>
                 </div>
@@ -49,9 +67,15 @@
         <!-- Start Blog Area -->
         <div class="blog-area article-area pt-100 pb-70">
             <div class="container">
-                <form action="{{ route('blog.form') }}" method="GET" style="margin-bottom: 20px;" id="search-form">
-                    <input type="text" name="search" placeholder="Search images..." value="{{ request('search') }}" style="padding: 10px; width: 300px; border-radius:5px" id="search-input">
-                    <button type="submit" style="padding: 10px; background-color: #E100FF; color: white; border: none;border-radius:5px; width:100px" >Search</button>
+                <form action="{{ route('blog.form') }}" method="GET" style="margin-bottom: 20px; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto;" id="search-form">
+                    <div style="position: relative; width: 100%;">
+                        <input type="text" name="search" placeholder="Search images..." value="{{ request('search') }}"
+                               style="padding: 10px 45px 10px 15px; width: 100%; border-radius: 30px; height: 50px; background: rgba(127, 0, 255, 0.05); border: 1px solid #7F00FF; color: white; box-shadow: 0 0 10px rgba(225, 0, 255, 0.1); transition: all 0.3s ease;"
+                               id="search-input">
+                        <button type="submit" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer; padding: 5px; width: auto; height: auto;">
+                            <i class="ri-search-line" style="color: #E100FF; font-size: 22px; transition: all 0.3s ease;"></i>
+                        </button>
+                    </div>
                 </form>
                 <div id="blog-list">
                     @include('partials.blog_list', ['blog' => $blog])
@@ -71,14 +95,6 @@
         <div id="progress">
             <span id="progress-value"><i class="ri-arrow-up-line"></i></span>
         </div>
-        <!-- End Top to Bottom -->
-<!--Start Popup Script-->
-		<script data-cfasync="false">(function(w,i,s,e){window[w]=window[w]||function(){(window[w].q=window[w].q||[]).push(arguments)};window[w].l=Date.now();s=document.createElement('script');e=document.getElementsByTagName('script')[0];s.defer=1;s.src=i;e.parentNode.insertBefore(s, e)})('wisepops', '../../../wisepops.net/loader5c69.html?v=2&amp;h=HzBeEscjD9');</script>
-
-        <!--Start of Live Chat Script-->
-            <script src="../../../code.tidio.co_443/ukbzkumwslzb2mxazsvwu2r0hnenldtf.js" async></script>
-        <!--End of  Live Chat  Script-->
-
         <!-- Js Linked -->
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -90,28 +106,28 @@
     </body>
 
 
-    <style>
+{{--    <style>--}}
 
-@media (max-width: 768px) { 
-    #search-form {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center; /* Center align */
-    }
+{{--@media (max-width: 768px) {--}}
+{{--    #search-form {--}}
+{{--        display: flex;--}}
+{{--        flex-wrap: nowrap;--}}
+{{--        justify-content: center; /* Center align */--}}
+{{--    }--}}
 
-    #search-input {
-        width: 70% !important; /* Adjust width */
-    }
+{{--    #search-input {--}}
+{{--        width: 70% !important; /* Adjust width */--}}
+{{--    }--}}
 
-    #search-form button {
-        width: 30% !important; /* Ensure button is beside input */
-        margin-left: 5px; /* Small gap between input and button */
-    }
-}
+{{--    #search-form button {--}}
+{{--        width: 30% !important; /* Ensure button is beside input */--}}
+{{--        margin-left: 5px; /* Small gap between input and button */--}}
+{{--    }--}}
+{{--}--}}
 
-        </style>
+{{--        </style>--}}
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{{--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--}}
 <script>
    function fetchBlogs(page) {
     $.ajax({
@@ -145,14 +161,14 @@ $(document).on('click', '#pagination a', function (e) {
 </script>
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+{{--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>--}}
 <script>
 $(document).ready(function () {
     $('#search-form').on('submit', function (e) {
         e.preventDefault(); // Prevent default form submission
-        
+
         let searchQuery = $('#search-input').val();
-        
+
         $.ajax({
             url: "{{ route('blog.form') }}", // Use the same route
             method: "GET",
@@ -172,7 +188,5 @@ $(document).ready(function () {
 });
 </script>
 
-
-<!-- Mirrored from demo.alhikmahsoft.com/template/ainext/blog.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Feb 2025 17:43:07 GMT -->
 </html>
 
