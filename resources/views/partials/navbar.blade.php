@@ -17,9 +17,9 @@
                 <a href="/about">About</a>
             </li>
             <li class="responsive-menu-list without-icon">
-                <a href="/blog">Blog</a>
+                <a href="/blog">Gallery</a>
             </li>
-            
+
             <li class="responsive-menu-list without-icon">
                 <a href="/contact">Contact Us</a>
             </li>
@@ -51,24 +51,24 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="/" class="nav-link active">
+                    <a href="{{route('home')}}" class="nav-link {{ request()->is('/') ? 'active' : '' }}">
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/about" class="nav-link active">
+                    <a href="{{route('about')}}" class="nav-link {{ request()->is('about') ? 'active' : '' }}">
                         About
                     </a>
                 </li>
-                
-               
+
+
                 <li class="nav-item">
-                    <a href="blog" class="nav-link">
-                        Blog
+                    <a href="{{route('blog.form')}}" class="nav-link {{ request()->is('gallery') ? 'active' : '' }}">
+                        Gallery
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="contact" class="nav-link">
+                    <a href="{{route('contact')}}" class="nav-link {{ request()->is('contact') ? 'active' : '' }}">
                         Contact Us
                     </a>
                 </li>

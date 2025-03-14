@@ -15,5 +15,5 @@ require __DIR__. '/faqs.php';
 require __DIR__. '/single.php';
 
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 

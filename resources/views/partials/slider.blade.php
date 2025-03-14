@@ -7,7 +7,7 @@
             <div class="col-lg-4 ">
                 <div class="content" style="margin-top: 15% w-4">
                     <!--<span class="banner-top-title">Fully Dynamic</span>-->
-                    <h1><span class="grd-color-1" >Lostineon</span> Transforming spaces with dazzling neon signs</h1>
+                    <h1><span class="grd-color-1" >ArmaCadabra</span> Want To Make a Positive Impact On The World Of Business</h1>
                     <p>Create production-quality visual assets for your projects with unprecedented quality, speed, and style-consistency.</p>
                 </div>
             </div>
@@ -17,19 +17,19 @@
                         @if($banner)
                         <div class="banner-content_banner owl-carousel owl-theme">
                             <div class="item_banner">
-                                <img src="{{ asset('storage/'  . $banner->image1) }}" alt="image">
+                                <img src="{{ asset('storage/'  . $banner->image1) }}" alt="image" loading="lazy">
                             </div>
                             <div class="item_banner">
-                                <img src="{{ asset('storage/'  . $banner->image2) }}" alt="image">
+                                <img src="{{ asset('storage/'  . $banner->image2) }}" alt="image" loading="lazy">
                             </div>
                             <div class="item_banner">
-                                <img src="{{ asset('storage/'  . $banner->image3) }}" alt="image">
+                                <img src="{{ asset('storage/'  . $banner->image3) }}" alt="image" loading="lazy">
                             </div>
                             <div class="item_banner">
-                                <img src="{{ asset('storage/'  . $banner->image4) }}" alt="image">
+                                <img src="{{ asset('storage/'  . $banner->image4) }}" alt="image" loading="lazy">
                             </div>
                         </div>
-                        
+
                         @else
                         <div><h1>Please Add images to the slider</h1></div>
                         @endif
@@ -48,9 +48,9 @@
 
 <style>
 
-   
+
 .banner-content_banner {
-    width: 900px; 
+    width: 900px;
 }
 
     .item_banner {
@@ -59,7 +59,7 @@
   background: linear-gradient(135deg, #a18cd1, #6d83f2, #8ec5fc, #b9fbc0);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 360px; 
+  height: 360px;
     width: 290px;
 }
 
@@ -69,7 +69,7 @@
   background: linear-gradient(135deg, #a18cd1, #6d83f2, #8ec5fc, #b9fbc0);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
- 
+
 }
 
 .item_banner:hover {
@@ -78,14 +78,14 @@
 }
 
 .item_banner img {
-  height: 360px; 
-    border-radius: 16px; 
-    object-fit: cover; 
+  height: 360px;
+    border-radius: 16px;
+    object-fit: cover;
 }
 .item img {
-  height: 360px; 
-    border-radius: 16px; 
-    object-fit: cover; 
+  height: 360px;
+    border-radius: 16px;
+    object-fit: cover;
 }
 
 @media (max-width: 768px) {
@@ -110,14 +110,14 @@
             font-size: 0.9rem; /* Adjust paragraph font size */
         }
 
-        
+
 
         .scroll-down{
             display: none;
         }
 
-        
-        
+
+
 
         .banner-content_banner {
         width: 100%; /* Ensure the banner takes 100% of the screen width */
@@ -145,4 +145,4 @@
 
     </style>
 
-    
+
