@@ -38,8 +38,9 @@
 <!-- Start Navbar Area -->
 <nav class="navbar navbar-expand-lg mb-nav" id="navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-            <h2>AiNext</h2>
+        <a class="navbar-brand" href="about">
+            <img src="{{asset("assets/img/ArmacadabraLogo.png")}}" alt="Armacadabra Logo" style="width: 150px; height: auto;">
+
         </a>
         <a class="navbar-toggler text-decoration-none" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button" aria-controls="navbarOffcanvas">
                     <span class="burger-menu">
