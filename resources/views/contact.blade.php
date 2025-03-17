@@ -84,7 +84,7 @@
             </div>
             <div class="col-lg-6">
                 <div class="image">
-                    <img src="assets/img/contact.jpg" alt="image" loading="lazy">
+                    <img src="assets/img/AboutImage.jpg" alt="image" loading="lazy">
                 </div>
             </div>
         </div>
