@@ -5,10 +5,10 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-sm-6">
                     <div class="single-footer-widget">
-                        <a href="index.html" class="logo">
-                            <h2>AiNext</h2>
+                        <a href="{{route('home')}}" class="logo">
+                            <h2>ArmaCadabra</h2>
                         </a>
-                        <p>Lorem ipsum amet, consectetur adipiscing elit. Suspendis varius enim eros elementum tristique. Duis cursus.</p>
+                        <p>Help businesses succeed by providing them with innovative and effective solutions.</p>
                         <ul class="social-links">
                             <li><a href="https://www.facebook.com/" target="_blank"><i class="ri-facebook-fill"></i></a></li>
                             <li><a href="https://www.instagram.com/" target="_blank"><i class="ri-instagram-line"></i></a></li>
@@ -21,23 +21,10 @@
                     <div class="single-footer-widget pl-5">
                         <h3>Links</h3>
                         <ul class="links-list">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li><a href="pricing.html">Pricing</a></li>
-                            <li><a href="blog.html">Blog</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="single-footer-widget">
-                        <h3>Legal</h3>
-                        <ul class="links-list">
-                            <li><a href="contact.html">Legal</a></li>
-                            <li><a href="terms-conditions.html">Tearms of Use</a></li>
-                            <li><a href="terms-conditions.html">Tearm & Condition</a></li>
-                            <li><a href="contact.html">Payment Method</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><a href="{{route('home')}}">Home</a></li>
+                            <li><a href="{{route('about')}}">About Us</a></li>
+                            <li><a href="{{route('blog.form')}}">Gallery</a></li>
+                            <li><a href="{{route('contact')}}">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>

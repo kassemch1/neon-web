@@ -15,6 +15,15 @@
     <link rel="stylesheet" href="{{ asset('admin_assets/css/plugins/plugins.css') }}">
     <link rel="stylesheet" href="{{ asset('admin_assets/css/helper.css') }}">
     <link rel="stylesheet" href="{{ asset('admin_assets/css/style.css') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset("assets/img/favicon-32x32.png")}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset("assets/img/favicon-16x16.png")}}">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset("assets/img/apple-touch-icon.png")}}">
+
+    <!-- Android Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="{{asset("assets/img/android-chrome-192x192.png")}}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{asset("assets/img/android-chrome-512x512.png")}}">
 </head>
 
 <body class="skin-dark">
@@ -43,7 +52,7 @@
                                 <th>Image 2</th>
                                 <th>Image 3</th>
                                 <th>Image 4</th>
-                                
+
                             </tr>
                         </thead>
                         <tbody>
@@ -60,7 +69,7 @@
                                 <td>
                                     <input type="file" name="image4">
                                 </td>
-                                
+
                             </tr>
                             <tr>
                                 <td>
@@ -84,7 +93,7 @@
 
                                     @endif
                                 </td>
-                                
+
                             </tr>
                         </tbody>
                     </table>
@@ -94,9 +103,9 @@
                         </div><!-- Button Group End -->
                     </div>
                 </form>
-                
-                
-                
+
+
+
                 @if (session('success'))
     <div class="alert alert-success">
         {{ session('success') }}

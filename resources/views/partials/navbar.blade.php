@@ -1,8 +1,8 @@
 <!-- Start Responsive Navbar Area -->
 <div class="responsive-navbar offcanvas offcanvas-end border-0" data-bs-backdrop="static" tabindex="-1" id="navbarOffcanvas">
     <div class="offcanvas-header">
-        <a href="index.html" class="logo d-inline-block">
-            <h2>AiNext</h2>
+        <a href="{{route('home')}}" class="logo d-inline-block">
+            <h2>ArmaCadabra</h2>
         </a>
         <button type="button" class="close-btn bg-transparent position-relative lh-1 p-0 border-0" data-bs-dismiss="offcanvas" aria-label="Close">
             <i class="ri-close-line"></i>
@@ -11,17 +11,17 @@
     <div class="offcanvas-body">
         <ul class="responsive-menu">
             <li class="responsive-menu-list without-icon">
-                <a href="/" class="active">Home</a>
+                <a href="{{route('home')}}" class="nav-link {{ request()->is('/') ? 'active' : '' }}">Home</a>
             </li>
             <li class="responsive-menu-list without-icon">
-                <a href="/about">About</a>
+                <a href="{{route('about')}}" class="nav-link {{ request()->is('about') ? 'active' : '' }}">About</a>
             </li>
             <li class="responsive-menu-list without-icon">
-                <a href="/blog">Gallery</a>
+                <a href="{{route('blog.form')}}" class="nav-link {{ request()->is('gallery') ? 'active' : '' }}">Gallery</a>
             </li>
 
             <li class="responsive-menu-list without-icon">
-                <a href="/contact">Contact Us</a>
+                <a href="{{route('contact')}}" class="nav-link {{ request()->is('contact') ? 'active' : '' }}">Contact Us</a>
             </li>
         </ul>
         <div class="others-option d-md-flex align-items-center">
@@ -38,7 +38,7 @@
 <!-- Start Navbar Area -->
 <nav class="navbar navbar-expand-lg mb-nav" id="navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="about">
+        <a class="navbar-brand" href="{{route('home')}}">
             <img src="{{asset("assets/img/ArmacadabraLogo.png")}}" alt="Armacadabra Logo" style="width: 150px; height: auto;">
 
         </a>
