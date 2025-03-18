@@ -132,9 +132,9 @@
     </div><!-- Content Body End -->
 
       <!-- Footer Section Start -->
-   
+
       @include('partials.adminFooter')
-     
+
       <!-- Footer Section End -->
 
 </div>

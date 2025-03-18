@@ -4,7 +4,7 @@
 
             <!-- Header Logo (Header Left) Start -->
             <div class="header-logo col-auto">
-                <h3>Neon</h3>
+                <h3>ArmaCadabra</h3>
 {{--                <a href="index.html">--}}
 {{--                    <img src={{asset("admin_assets/images/logo/logo.png")}} alt="">--}}
 {{--                    <img src={{asset("admin_assets/images/logo/logo-light.png")}} class="logo-light" alt="">--}}

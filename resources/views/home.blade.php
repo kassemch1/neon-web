@@ -16,8 +16,16 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
 
-    <!-- favicon Linked -->
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.png')}}">
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset("assets/img/favicon-32x32.png")}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset("assets/img/favicon-16x16.png")}}">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset("assets/img/apple-touch-icon.png")}}">
+
+    <!-- Android Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="{{asset("assets/img/android-chrome-192x192.png")}}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{asset("assets/img/android-chrome-512x512.png")}}">
 
 </head>
 <style>
@@ -82,6 +90,7 @@
                         <div class="item">
                             <a href="{{ route('slider.show', $slider->id) }}">
                                 <img src="{{asset($slider->images)}}" alt="image" style="height:350px" loading="lazy"></a>
+
                             <div class="pop-content">
                                 <h3><a href="{{ route('slider.show', $slider->id) }}">{{$slider->name}}</a></h3>
                             </div>

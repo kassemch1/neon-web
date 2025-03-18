@@ -19,7 +19,10 @@ class AdminController extends Controller
 
     public function admin_dashboard()
     {
-        return view('admin_views/admin_dashboard');
+        $subscribers=Subscriber::all();
+        return view('admin_views/subscribers/view_subscribers',[
+            'subscribers'=>$subscribers
+        ]);
     }
     public function contacts_index()
     {

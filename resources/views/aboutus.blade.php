@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AiNext - AI Agency & Startup HTML Template</title>
+    <title>ArmaCadabra - About Us</title>
 
     <!-- CSS Linked -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -16,8 +16,16 @@
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
 
-    <!-- favicon Linked -->
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset("assets/img/favicon-32x32.png")}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset("assets/img/favicon-16x16.png")}}">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset("assets/img/apple-touch-icon.png")}}">
+
+    <!-- Android Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="{{asset("assets/img/android-chrome-192x192.png")}}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{asset("assets/img/android-chrome-512x512.png")}}">
 
     <style>
         .faq-container {
@@ -103,7 +111,7 @@
             <h1>About us</h1>
             <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">About us</li>
                 </ol>
             </nav>
@@ -120,19 +128,13 @@
 
 
 
-@include('partials/gallery')
+{{--@include('partials/gallery')--}}
 @include('partials/footer')
 <!-- Start Top to Bottom -->
 <div id="progress">
     <span id="progress-value"><i class="ri-arrow-up-line"></i></span>
 </div>
 <!-- End Top to Bottom -->
-<!--Start Popup Script-->
-<script data-cfasync="false">(function(w,i,s,e){window[w]=window[w]||function(){(window[w].q=window[w].q||[]).push(arguments)};window[w].l=Date.now();s=document.createElement('script');e=document.getElementsByTagName('script')[0];s.defer=1;s.src=i;e.parentNode.insertBefore(s, e)})('wisepops', '../../../wisepops.net/loader5c69.html?v=2&amp;h=HzBeEscjD9');</script>
-
-<!--Start of Live Chat Script-->
-<script src="../../../code.tidio.co_443/ukbzkumwslzb2mxazsvwu2r0hnenldtf.js" async></script>
-<!--End of  Live Chat  Script-->
 
 <!-- Js Linked -->
 <script src="{{asset('assets/js/jquery.min.js')}}"></script>
@@ -144,5 +146,4 @@
 <script src="{{asset('assets/js/ainext.js')}}"></script>
 </body>
 
-<!-- Mirrored from demo.alhikmahsoft.com/template/ainext/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 20 Feb 2025 17:43:01 GMT -->
 </html>
