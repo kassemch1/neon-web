@@ -11,32 +11,17 @@
     <div class="offcanvas-body">
         <ul class="responsive-menu">
             <li class="responsive-menu-list without-icon">
-                <a href="index.html" class="active">Home</a>
-            </li>
-            <li class="responsive-menu-list"><a href="javascript:void(0);" >Pages</a>
-                <ul class="responsive-menu-items">
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="team.html">Team</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="terms-conditions.html">Terms Conditions</a></li>
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                    <li><a href="4o4.html">404 Error Page</a></li>
-                    <li><a href="contact.html">Coming Soon</a></li>
-                </ul>
+                <a href="/" class="active">Home</a>
             </li>
             <li class="responsive-menu-list without-icon">
-                <a href="portfolio.html">Portfolio</a>
+                <a href="/about">About</a>
+            </li>
+            <li class="responsive-menu-list without-icon">
+                <a href="/blog">Gallery</a>
             </li>
 
-            <li class="responsive-menu-list"><a href="javascript:void(0);">Blog</a>
-                <ul class="responsive-menu-items">
-                    <li><a href="blog">Blog</a></li>
-                    <li><a href="blog-sidebar">Blog Right Sidebar</a></li>
-                    <li><a href="blog-details">Blog Details</a></li>
-                </ul>
-            </li>
             <li class="responsive-menu-list without-icon">
-                <a href="contact.html">Contact</a>
+                <a href="/contact">Contact Us</a>
             </li>
         </ul>
         <div class="others-option d-md-flex align-items-center">
@@ -53,8 +38,9 @@
 <!-- Start Navbar Area -->
 <nav class="navbar navbar-expand-lg mb-nav" id="navbar">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-            <h2>AiNext</h2>
+        <a class="navbar-brand" href="about">
+            <img src="{{asset("assets/img/ArmacadabraLogo.png")}}" alt="Armacadabra Logo" style="width: 150px; height: auto;">
+
         </a>
         <a class="navbar-toggler text-decoration-none" data-bs-toggle="offcanvas" href="#navbarOffcanvas" role="button" aria-controls="navbarOffcanvas">
                     <span class="burger-menu">
@@ -66,81 +52,24 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link active">
+                    <a href="{{route('home')}}" class="nav-link {{ request()->is('/') ? 'active' : '' }}">
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('about')}}" class="nav-link active">
+                    <a href="{{route('about')}}" class="nav-link {{ request()->is('about') ? 'active' : '' }}">
                         About
                     </a>
                 </li>
+
+
                 <li class="nav-item">
-                    <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                        Pages
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="nav-item">
-                            <a href="about" class="nav-link">
-                                About Us
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="team.html" class="nav-link">
-                                Team
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="pricing" class="nav-link">
-                                Pricing
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="terms-conditions.html" class="nav-link">
-                                Tearm & Condition
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="privacy-policy.html" class="nav-link">
-                                Privacy Policy
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="not-found.html" class="nav-link">
-                                404 Error Page
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="portfolio" class="nav-link">
-                        Portfolio
+                    <a href="{{route('blog.form')}}" class="nav-link {{ request()->is('gallery') ? 'active' : '' }}">
+                        Gallery
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="javascript:void(0)" class="dropdown-toggle nav-link">
-                        Blog
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="nav-item">
-                            <a href="blog" class="nav-link">
-                                Blog Grid
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="blog-sidebar" class="nav-link">
-                                Blog Right Sidebar
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="blog-details" class="nav-link">
-                                Blog Details
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a href="contact" class="nav-link">
+                    <a href="{{route('contact')}}" class="nav-link {{ request()->is('contact') ? 'active' : '' }}">
                         Contact Us
                     </a>
                 </li>

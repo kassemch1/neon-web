@@ -60,12 +60,12 @@
 {{--                        <li><a href="{{route('managePlan.index')}}"><span>Edit Plan</span></a></li>--}}
 {{--                    </ul>--}}
 {{--                </li>--}}
-{{--                <li class="has-sub-menu"><a href="#"><i class="fa fa-question-circle"></i> <span>Manage FAQs</span></a>--}}
-{{--                    <ul class="side-header-sub-menu">--}}
-{{--                        <li><a href="{{route("manageFaq.create")}}"><span>Add FAQ</span></a></li>--}}
-{{--                        <li><a href="{{route("manageFaq.index")}}"><span>Edit FAQ</span></a></li>--}}
-{{--                    </ul>--}}
-{{--                </li>--}}
+<li class="has-sub-menu"><a href="#"><i class="fa fa-question-circle"></i> <span>Manage FAQs</span></a>
+    <ul class="side-header-sub-menu">
+        <li><a href="{{route("manageFaq.create")}}"><span>Add FAQ</span></a></li>
+        <li><a href="{{route("manageFaq.index")}}"><span>Edit FAQ</span></a></li>
+    </ul>
+</li>
 {{--                <li class="has-sub-menu"><a href="#"><i class="fa fa-shopping-cart"></i> <span>Manage Orders</span></a>--}}
 {{--                    <ul class="side-header-sub-menu">--}}
 {{--                        <li><a href="{{route("admin.orders.pending")}}"><span>Pending Orders List</span></a></li>--}}

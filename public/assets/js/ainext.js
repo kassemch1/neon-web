@@ -74,7 +74,7 @@
             $('.item-box').hide('1000').filter('.' + value).show('1000');
         }
     });
-	
+
     // Play Button
     $(document).on('click', '.play', function() {
         $(this).addClass('on').siblings().removeClass('on');
@@ -139,9 +139,9 @@
 			}
 		}
 	});
-	
+
 	// Banner Slider
-	$('.banner-content').owlCarousel({
+	$('.banner-content_banner').owlCarousel({
 		dots: false,
 		nav: false,
 		loop: true,
@@ -151,7 +151,7 @@
 		autoplayHoverPause: true,
 		responsive: {
 			0: {
-				items: 2
+				items: 1
 			},
 			576: {
 				items: 1
@@ -166,12 +166,12 @@
 				items: 3
 			}
 		}
-		
-	}); 
 
-	
-	
-	
+	});
+
+
+
+
 	// Instagram slider
 	$('.ins-gallery').owlCarousel({
 		nav: false,
@@ -198,7 +198,7 @@
 			}
 		}
 	});
-	
+
 	// AOS Animation
 	AOS.init();
 
@@ -221,8 +221,8 @@
 		});
 		scrollProgress.style.background = `conic-gradient(#7f00ff ${scrollValue}%, #9094a6 ${scrollValue}%)`;
 	  };
-	  
+
 	  window.onscroll = calcScrollValue;
 	  window.onload = calcScrollValue;
-		
+
 })(jQuery);

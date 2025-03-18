@@ -11,8 +11,9 @@ require __DIR__. '/slider.php';
 require __DIR__. '/subscribe.php';
 require __DIR__. '/catalogue.php';
 require __DIR__. '/aboutus.php';
+require __DIR__. '/faqs.php';
 require __DIR__. '/single.php';
 
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
