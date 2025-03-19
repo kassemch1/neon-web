@@ -10,7 +10,7 @@
             <div class="col-lg-6">
                 <div class="content">
                     <div class="sub-t">About Us</div>
-                    <h2>Create your own AI business easily.</h2>
+                    <h2>We supply quality raw materials worldwide.</h2>
                     @if($aboutus)
                     <p>{{$aboutus->description}}</p>
                     <div class="row">
@@ -43,7 +43,7 @@
                     @else
         <p>No information available.</p>
     @endif
-                    <a class="main-btn" href="about.html"><span></span><i class="ri-quill-pen-line"></i> About Us</a>
+                    <a class="main-btn" href="{{route('about')}}"><span></span><i class="ri-quill-pen-line"></i> About Us</a>
                 </div>
             </div>
         </div>
