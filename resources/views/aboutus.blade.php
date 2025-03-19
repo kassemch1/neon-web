@@ -120,7 +120,7 @@
 </div>
 <!-- End Section Banner -->
 
-@include('partials/aboutus')
+@include('partials.aboutus')
 
 @include('partials.faqs')
 
