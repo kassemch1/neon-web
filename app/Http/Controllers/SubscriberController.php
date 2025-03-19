@@ -3,7 +3,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Subscriber;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rule;
+use RyanChandler\LaravelCloudflareTurnstile\Rules\Turnstile;
 
 class SubscriberController extends Controller
 {
@@ -11,28 +13,34 @@ class SubscriberController extends Controller
      * Store a new subscriber.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function store(Request $request, Turnstile $turnstile)
     {
-        $validated = $request->validate([
-            'email' => [
-                'required',
-                'email',
-                'max:255',
-                Rule::unique('subscribers', 'email'),
-            ],
-        ]);
+        try {
+            $validated = $request->validate([
+                'email' => ['required', 'email', 'max:255', Rule::unique('subscribers', 'email')],
+                'cf-turnstile-response' => ['required', $turnstile],
+            ]);
 
-        Subscriber::create($validated);
+            Subscriber::create(['email' => $validated['email']]); // Save email
 
-        if ($request->ajax()) {
             return response()->json([
                 'success' => true,
                 'message' => 'Thank you for subscribing!'
             ]);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            Log::error('Validation failed', $e->errors());
+            return response()->json([
+                'success' => false,
+                'errors' => $e->errors()
+            ], 422);
+        } catch (\Exception $e) {
+            Log::error('Subscription failed: ' . $e->getMessage());
+            return response()->json([
+                'success' => false,
+                'message' => 'Subscription failed: ' . $e->getMessage()
+            ], 500);
         }
-
-        return redirect()->back()->with('success', 'Thank you for subscribing!');
     }
 }
