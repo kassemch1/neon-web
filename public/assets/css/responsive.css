@@ -13,7 +13,7 @@
    .pb-100{
         padding-bottom: 60px;
    }
-   .pt-70 { 
+   .pt-70 {
         padding-top: 60px;
     }
     .pb-70 {
@@ -34,7 +34,7 @@
     }
     .default-btn {
         padding: 13px 42px 13px 20px;
-        font-size: 16px;   
+        font-size: 16px;
     }
     .default-btn i {
         right: 15px;
@@ -374,7 +374,7 @@
     .article-area .item .pop-content h3 a {
         font-size: 25px;
     }
-    
+
     /* footer area */
     .footer-area .single-footer-widget p {
         color: var(--paragraphColor);
