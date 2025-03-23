@@ -1052,7 +1052,7 @@ Banner Area CSS
   display: inline-block;
 }
 .banner-area .content h1 {
-  font-size: 58px;
+  font-size: 50px;
   font-weight: 700;
   margin-bottom: 20px;
 }
@@ -1078,7 +1078,7 @@ Banner Area CSS
   right: 0;
   text-align: center;
   bottom: 30px;
-  
+
 }
 .banner-area .scroll-down .mouse {
   width: 24px;
@@ -1087,7 +1087,7 @@ Banner Area CSS
   border-radius: 60px;
   position: relative;
   margin: auto;
-  
+
 }
 .banner-area .scroll-down .mouse::before {
   content: "";
@@ -1205,7 +1205,7 @@ Banner Area CSS
 }
 .section-banner .breadcrumb .breadcrumb-item a {
   color: var(--white_color);
-  
+
 }
 .section-banner .breadcrumb-item + .breadcrumb-item::before {
   color: var(--paragraphColor);

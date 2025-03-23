@@ -44,7 +44,7 @@
                                 <button type="submit" class="default-btn"><i class="ri-send-plane-line"></i> Subscribe Now</button>
                                 <div id="validator-newsletter2" class="form-result"></div>
                                 <div class="mt-3 d-flex flex-column align-items-center justify-content-center w-100">
-                                <x-turnstile data-theme="dark" />
+                                    <x-turnstile data-theme="dark"  data-sitekey="{{ env('TURNSTILE_SITE_KEY') }}" />
                                 </div>
                             </form>
                         </div>
@@ -57,7 +57,7 @@
             <span class="item-content">
                         © 2025 ArmaCadabra, All rights reserved.<br> Powered by <a href="https://www.tawwer.tech/" target="_blank">Tawwer</a>.
                     </span>
-{{--            <p>© Copyright | <a href="https://tawwer.tech/" target="_blank">Tawwer</a>  | All Rights Reserved is Proudly </p>--}}
+            {{--            <p>© Copyright | <a href="https://tawwer.tech/" target="_blank">Tawwer</a>  | All Rights Reserved is Proudly </p>--}}
         </div>
     </div>
     <div class="lines">
@@ -78,75 +78,72 @@
             subscribeForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
-                // Clear previous response message and error states
+                // Clear previous response message
                 responseDiv.style.display = 'none';
                 responseDiv.textContent = '';
 
-                // Clear form validation error states
-                const emailField = subscribeForm.querySelector('[name="email"]');
-                emailField.classList.remove('is-invalid'); // Remove error state from the email field
+                // Retrieve Turnstile response
+                const turnstileInput = document.querySelector('[name="cf-turnstile-response"]');
+                if (!turnstileInput || !turnstileInput.value) {
+                    responseDiv.textContent = 'Please complete the security check.';
+                    responseDiv.style.display = 'block';
+                    responseDiv.className = 'alert alert-danger py-2 mb-3';
+                    return;
+                }
 
-                // Retrieve the Turnstile response and reset it
-                const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]').value;
-
-                // Reset Turnstile challenge to ensure a new response token
-                turnstile.reset();
-
+                // Prepare form data
                 const formData = new FormData(subscribeForm);
-                formData.append('cf-turnstile-response', turnstileResponse);
+                formData.append('cf-turnstile-response', turnstileInput.value);
 
-                // Start the AJAX request
+                // AJAX request
                 $.ajax({
                     url: "{{ route('subscribe') }}",
                     type: "POST",
+                    headers: {
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
                     data: formData,
                     processData: false,
                     contentType: false,
                     success: function(response) {
-                        // Display success message
                         responseDiv.textContent = response.message || 'Thank you for subscribing!';
                         responseDiv.style.display = 'block';
                         responseDiv.className = 'alert alert-success py-2 mb-3';
 
-                        // Reset the form
+                        // Reset form and Turnstile
                         subscribeForm.reset();
-                        turnstile.reset(); // Reset Turnstile challenge again just in case
+                        if (typeof turnstile !== 'undefined') {
+                            turnstile.reset();
+                        }
 
-                        // Hide the message after 5 seconds
-                        setTimeout(function() {
+                        setTimeout(() => {
                             responseDiv.style.display = 'none';
                         }, 5000);
                     },
                     error: function(xhr) {
                         let errorMessage = 'Something went wrong. Please try again.';
 
-                        // Log the entire response for debugging
-                        console.log('AJAX Error Response:', xhr.responseJSON);
-
                         if (xhr.status === 422) {
                             const errors = xhr.responseJSON?.errors || {};
 
-                            // Check if email has validation errors
                             if (errors.email) {
-                                errorMessage = errors.email[0]; // Get the first error message
-
-                                // Add error class to the email input field to indicate validation failure
-                                emailField.classList.add('is-invalid');
+                                errorMessage = errors.email[0];
                             }
-
-                            // Check if Turnstile validation failed
                             if (errors['cf-turnstile-response']) {
-                                errorMessage = errors['cf-turnstile-response'][0]; // Display Turnstile error message
+                                errorMessage = errors['cf-turnstile-response'][0];
                             }
                         }
 
-                        // Display error message
                         responseDiv.textContent = errorMessage;
                         responseDiv.style.display = 'block';
                         responseDiv.className = 'alert alert-danger py-2 mb-3';
 
-                        // Hide the error message after 5 seconds
-                        setTimeout(function() {
+                        // ✅ Reset Turnstile on error so a new token is generated
+                        if (typeof turnstile !== 'undefined') {
+                            turnstile.reset();
+                        }
+
+                        setTimeout(() => {
                             responseDiv.style.display = 'none';
                         }, 5000);
                     }
@@ -154,8 +151,6 @@
             });
         }
     });
-
-
-
-
 </script>
+
+
