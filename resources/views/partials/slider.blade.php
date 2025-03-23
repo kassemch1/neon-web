@@ -7,13 +7,13 @@
             <div class="col-lg-4 ">
                 <div class="content" style="margin-top: 15% w-4">
                     <!--<span class="banner-top-title">Fully Dynamic</span>-->
-                    <h1><span class="grd-color-1" >ArmaCadabra</span> Want To Make a Positive Impact On The World Of Business</h1>
+                    <h1><span class="grd-color-1" >Armacadabra</span> delivers quality signage & materials, making a positive impact in the business world.🌎</h1>
                     <p>Create production-quality visual assets for your projects with unprecedented quality, speed, and style-consistency.</p>
                 </div>
             </div>
             <div class="col-lg-8" >
                 <div class="image" >
-                    <div class="col-lg-8">
+                    <div class="col-lg-12">
                         @if($banner)
                         <div class="banner-content_banner owl-carousel owl-theme">
                             <div class="item_banner">
@@ -50,27 +50,31 @@
 
 
 .banner-content_banner {
-    width: 900px;
+    width: 100%;
+    margin-left: -10px;
 }
 
     .item_banner {
-  padding: 3px; /* Space between border and image */
-  border-radius: 20px;
-  background: linear-gradient(135deg, #a18cd1, #6d83f2, #8ec5fc, #b9fbc0);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 360px;
-    width: 290px;
+        padding: 3px; /* Space between border and image */
+        border-radius: 20px;
+        background: linear-gradient(135deg, #a18cd1, #6d83f2, #8ec5fc, #b9fbc0);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 360px;
+        /*width: 100%; !* Full width to prevent the 290px gap *!*/
+        display: flex;
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
 }
 
-.item {
-  padding: 3px; /* Space between border and image */
-  border-radius: 20px;
-  background: linear-gradient(135deg, #a18cd1, #6d83f2, #8ec5fc, #b9fbc0);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/*.item {*/
+/*  padding: 3px; !* Space between border and image *!*/
+/*  border-radius: 20px;*/
+/*  background: linear-gradient(135deg, #a18cd1, #6d83f2, #8ec5fc, #b9fbc0);*/
+/*  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); !* Soft shadow *!*/
+/*  transition: transform 0.3s ease, box-shadow 0.3s ease;*/
 
-}
+/*}*/
 
 .item_banner:hover {
   transform: scale(1.01); /* Slight zoom on hover */
@@ -78,15 +82,16 @@
 }
 
 .item_banner img {
-  height: 360px;
+  height: 100%;
+    width: 100%;
     border-radius: 16px;
     object-fit: cover;
 }
-.item img {
-  height: 360px;
-    border-radius: 16px;
-    object-fit: cover;
-}
+/*.item img {*/
+/*  height: 360px;*/
+/*    border-radius: 16px;*/
+/*    object-fit: cover;*/
+/*}*/
 
 @media (max-width: 768px) {
 
@@ -141,7 +146,7 @@
 
     }
 
-@media (max-width: 1380px) {
+@media (min-width:767px) and  (max-width: 1430px){
 
     html, body {
         overflow-x: hidden;
@@ -171,7 +176,7 @@
 
 
     .banner-content_banner {
-        width: 800px; /* Ensure the banner takes 100% of the screen width */
+        width: 100%; /* Ensure the banner takes 100% of the screen width */
         margin: 0 auto; /* Center the content horizontally */
     }
 
