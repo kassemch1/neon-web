@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/aos.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
-
+    @turnstileScripts()
     <!-- favicon Linked -->
     <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.png')}}">
     <style>
