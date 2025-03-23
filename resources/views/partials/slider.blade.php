@@ -117,8 +117,6 @@
         }
 
 
-
-
         .banner-content_banner {
         width: 100%; /* Ensure the banner takes 100% of the screen width */
         margin: 0 auto; /* Center the content horizontally */
@@ -142,6 +140,59 @@
     }
 
     }
+
+@media (max-width: 1380px) {
+
+    html, body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .content {
+        margin-top: 0; /* Remove margin-top on mobile */
+    }
+
+    .banner-area {
+        height: auto; /* Adjust height for mobile */
+    }
+
+    .content h1 {
+        font-size: 1.8rem; /* Adjust font size for smaller screens */
+    }
+
+    .content p {
+        font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+
+
+
+    .scroll-down{
+        display: none;
+    }
+
+
+    .banner-content_banner {
+        width: 800px; /* Ensure the banner takes 100% of the screen width */
+        margin: 0 auto; /* Center the content horizontally */
+    }
+
+    .item_banner {
+        width: 100%; /* Set the width of each item to 100% on mobile */
+        height: 350px; /* Optional: Adjust height of items for better scaling on mobile */
+        display: flex; /* Use flexbox for centering */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+    }
+
+    .item_banner img {
+        width: 100%; /* Ensure the image fills the entire width of the item */
+        height: 100%; /* Adjust the height to cover the entire area */
+    }
+
+    .image{
+        margin-right: 22px
+    }
+
+}
 
     </style>
 

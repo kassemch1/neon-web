@@ -43,6 +43,9 @@
                                 <input type="text" class="input-newsletter" placeholder="Enter your email address" name="email" required="" autocomplete="off">
                                 <button type="submit" class="default-btn"><i class="ri-send-plane-line"></i> Subscribe Now</button>
                                 <div id="validator-newsletter2" class="form-result"></div>
+                                <div class="mt-3 d-flex flex-column align-items-center justify-content-center w-100">
+                                <x-turnstile data-theme="dark" />
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -75,12 +78,24 @@
             subscribeForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
-                const formData = new FormData(subscribeForm);
-                // Add CSRF token if not already in the form
-                if (!formData.has('_token')) {
-                    formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
-                }
+                // Clear previous response message and error states
+                responseDiv.style.display = 'none';
+                responseDiv.textContent = '';
 
+                // Clear form validation error states
+                const emailField = subscribeForm.querySelector('[name="email"]');
+                emailField.classList.remove('is-invalid'); // Remove error state from the email field
+
+                // Retrieve the Turnstile response and reset it
+                const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]').value;
+
+                // Reset Turnstile challenge to ensure a new response token
+                turnstile.reset();
+
+                const formData = new FormData(subscribeForm);
+                formData.append('cf-turnstile-response', turnstileResponse);
+
+                // Start the AJAX request
                 $.ajax({
                     url: "{{ route('subscribe') }}",
                     type: "POST",
@@ -88,12 +103,16 @@
                     processData: false,
                     contentType: false,
                     success: function(response) {
+                        // Display success message
                         responseDiv.textContent = response.message || 'Thank you for subscribing!';
                         responseDiv.style.display = 'block';
                         responseDiv.className = 'alert alert-success py-2 mb-3';
 
+                        // Reset the form
                         subscribeForm.reset();
+                        turnstile.reset(); // Reset Turnstile challenge again just in case
 
+                        // Hide the message after 5 seconds
                         setTimeout(function() {
                             responseDiv.style.display = 'none';
                         }, 5000);
@@ -101,14 +120,32 @@
                     error: function(xhr) {
                         let errorMessage = 'Something went wrong. Please try again.';
 
+                        // Log the entire response for debugging
+                        console.log('AJAX Error Response:', xhr.responseJSON);
+
                         if (xhr.status === 422) {
-                            errorMessage = 'This email is already subscribed.';
+                            const errors = xhr.responseJSON?.errors || {};
+
+                            // Check if email has validation errors
+                            if (errors.email) {
+                                errorMessage = errors.email[0]; // Get the first error message
+
+                                // Add error class to the email input field to indicate validation failure
+                                emailField.classList.add('is-invalid');
+                            }
+
+                            // Check if Turnstile validation failed
+                            if (errors['cf-turnstile-response']) {
+                                errorMessage = errors['cf-turnstile-response'][0]; // Display Turnstile error message
+                            }
                         }
 
+                        // Display error message
                         responseDiv.textContent = errorMessage;
                         responseDiv.style.display = 'block';
                         responseDiv.className = 'alert alert-danger py-2 mb-3';
 
+                        // Hide the error message after 5 seconds
                         setTimeout(function() {
                             responseDiv.style.display = 'none';
                         }, 5000);
@@ -117,4 +154,8 @@
             });
         }
     });
+
+
+
+
 </script>
