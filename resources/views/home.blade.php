@@ -26,7 +26,7 @@
     <!-- Android Chrome -->
     <link rel="icon" type="image/png" sizes="192x192" href="{{asset("assets/img/android-chrome-192x192.png")}}">
     <link rel="icon" type="image/png" sizes="512x512" href="{{asset("assets/img/android-chrome-512x512.png")}}">
-    @turnstileScripts()
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 <style>
     .whatsapp-button {
@@ -52,7 +52,7 @@
     }
 </style>
 
-<a href="https://wa.me/71742224" class="whatsapp-button" target="_blank">
+<a href="https://wa.me/76970779" class="whatsapp-button" target="_blank">
     &#x1F4AC;
 </a>
 
