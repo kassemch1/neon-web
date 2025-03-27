@@ -23,7 +23,7 @@
                         <ul class="links-list">
                             <li><a href="{{route('home')}}">Home</a></li>
                             <li><a href="{{route('about')}}">About Us</a></li>
-                            <li><a href="{{route('blog.form')}}">Gallery</a></li>
+                            <li><a href="{{route('blog.form')}}">Products</a></li>
                             <li><a href="{{route('contact')}}">Contact Us</a></li>
                         </ul>
                     </div>

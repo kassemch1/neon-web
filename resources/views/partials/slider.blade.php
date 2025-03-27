@@ -8,7 +8,7 @@
                 <div class="content" style="margin-top: 15% w-4">
                     <!--<span class="banner-top-title">Fully Dynamic</span>-->
                     <h1><span class="grd-color-1" >Armacadabra</span> delivers quality signage & materials, making a positive impact in the business world.🌎</h1>
-                    <p>Create production-quality visual assets for your projects with unprecedented quality, speed, and style-consistency.</p>
+{{--                    <p>Create production-quality visual assets for your projects with unprecedented quality, speed, and style-consistency.</p>--}}
                 </div>
             </div>
             <div class="col-lg-8" >

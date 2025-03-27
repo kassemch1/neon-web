@@ -1,9 +1,11 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Mail\SubscribeMail;
 use App\Models\Subscriber;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Validation\Rule;
 use RyanChandler\LaravelCloudflareTurnstile\Rules\Turnstile;
 
@@ -24,7 +26,7 @@ class SubscriberController extends Controller
             ]);
 
             Subscriber::create(['email' => $validated['email']]); // Save email
-
+            Mail::to('Armacadabra.info@gmail.com')->send(new SubscribeMail($validated));
             return response()->json([
                 'success' => true,
                 'message' => 'Thank you for subscribing!'
