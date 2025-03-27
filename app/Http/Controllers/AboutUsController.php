@@ -7,6 +7,7 @@ use App\Models\BannerSlider;
 use Illuminate\Http\Request;
 use App\Models\Slider;
 use App\Models\Faq;
+use Jenssegers\Agent\Agent;
 
 class AboutUsController extends Controller
 {
@@ -16,12 +17,13 @@ class AboutUsController extends Controller
         $aboutus=AboutUs::first();
         return view('admin_views/aboutus/edit_aboutus',[
             'aboutus'=>$aboutus,
-            
+
         ]);
     }
 
     public function index_user()
     {
+        $agent = new Agent();
         $sliders=Slider::all();
         $faqs=Faq::all();
         $banner = BannerSlider::first();
@@ -32,6 +34,7 @@ class AboutUsController extends Controller
             'aboutus'=>$aboutus,
             'sliders'=>$sliders,
             'faqs'=>$faqs,
+            'agent'=>$agent,
         ]);
     }
     public function update(Request $request)

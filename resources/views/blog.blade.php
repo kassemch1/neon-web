@@ -5,7 +5,7 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ArmaCadabra - Galley</title>
+        <title>ArmaCadabra - Products</title>
 
         <!-- CSS Linked -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}">
@@ -58,11 +58,11 @@
         <div class="section-banner">
             <div class="container">
                 <div class="section-banner-title">
-                    <h1>Gallery</h1>
+                    <h1>Products</h1>
                     <nav style="--bs-breadcrumb-divider: '/';" aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{route('home')}}">Home</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Gallery</li>
+                            <li class="breadcrumb-item active" aria-current="page">Products</li>
                         </ol>
                     </nav>
                 </div>

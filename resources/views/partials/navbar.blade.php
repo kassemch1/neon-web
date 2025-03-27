@@ -17,7 +17,7 @@
                 <a href="{{route('about')}}" class="nav-link {{ request()->is('about') ? 'active' : '' }}">About</a>
             </li>
             <li class="responsive-menu-list without-icon">
-                <a href="{{route('blog.form')}}" class="nav-link {{ request()->is('gallery') ? 'active' : '' }}">Gallery</a>
+                <a href="{{route('blog.form')}}" class="nav-link {{ request()->is('products') ? 'active' : '' }}">Products</a>
             </li>
 
             <li class="responsive-menu-list without-icon">
@@ -64,8 +64,8 @@
 
 
                 <li class="nav-item">
-                    <a href="{{route('blog.form')}}" class="nav-link {{ request()->is('gallery') ? 'active' : '' }}">
-                        Gallery
+                    <a href="{{route('blog.form')}}" class="nav-link {{ request()->is('products') ? 'active' : '' }}">
+                        Products
                     </a>
                 </li>
                 <li class="nav-item">

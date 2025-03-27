@@ -58,63 +58,107 @@
 
 <body>
 
-@include('partials/navbar')
 
-@include('partials/slider', ['banner' => $banner])
-
-@include('partials.features')
-
-@include('partials.aboutus')
-
-@include('partials/faqs')
+@if(!($agent->isMobile()))
+    @include('partials/navbar')
 
 
+    @include('partials/slider', ['banner' => $banner])
+    @include('partials.features')
 
-
-<!-- Start Article Area -->
-<div class="article-area ptb-100">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="section-title">
-                    <div class="width">
-                        <div class="sub-t">Our Latest News</div>
-                        <h2>Latest News & Articles</h2>
-                        <a class="main-btn" href="{{route('blog.form')}}"><span></span><i class="ri-pencil-line"></i> See More</a>
+    @include('partials.aboutus')
+    <!-- Start Article Area -->
+    <div class="article-area ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="section-title">
+                        <div class="width">
+                            <div class="sub-t">Our Latest News</div>
+                            <h2>Latest News & Articles</h2>
+                            <a class="main-btn" href="{{route('blog.form')}}"><span></span><i class="ri-pencil-line"></i> See More</a>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-8">
-                <div class="article-content owl-carousel owl-theme">
-                    @foreach($sliders as $slider)
-                        <div class="item">
-                            <a href="{{ route('slider.show', $slider->id) }}">
-                                <img src="{{asset($slider->images)}}" alt="image" style="height:350px" loading="lazy"></a>
+                <div class="col-lg-8">
+                    <div class="article-content owl-carousel owl-theme">
+                        @foreach($sliders as $slider)
+                            <div class="item">
+                                <a href="{{ route('slider.show', $slider->id) }}">
+                                    <img src="{{asset($slider->images)}}" alt="image" style="height:350px" loading="lazy"></a>
 
-                            <div class="pop-content">
-                                <h3><a href="{{ route('slider.show', $slider->id) }}">{{$slider->name}}</a></h3>
-                            </div>
-                            <a href="{{ route('slider.show', $slider->id) }}">
-                                <div class="go-corner">
-                                    <div class="go-arrow">
-                                        <i class="ri-arrow-right-up-line"></i>
-                                    </div>
+                                <div class="pop-content">
+                                    <h3><a href="{{ route('slider.show', $slider->id) }}">{{$slider->name}}</a></h3>
                                 </div>
-                            </a>
-                        </div>
-                    @endforeach
+                                <a href="{{ route('slider.show', $slider->id) }}">
+                                    <div class="go-corner">
+                                        <div class="go-arrow">
+                                            <i class="ri-arrow-right-up-line"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- End Article Area -->
+    <!-- End Article Area -->
+    @include('partials/faqs')
+    @include('partials/footer')
 
+@elseif($agent->isMobile())
+    @include('partials/navbar')
+    @include('partials/slider', ['banner' => $banner])
+    @include('partials.aboutus')
+    <!-- Start Article Area -->
+    <div class="article-area ptb-100">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="section-title">
+                        <div class="width">
+                            <div class="sub-t">Our Latest News</div>
+                            <h2>Latest News & Articles</h2>
+                            <a class="main-btn" href="{{route('blog.form')}}"><span></span><i class="ri-pencil-line"></i> See More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="article-content owl-carousel owl-theme">
+                        @foreach($sliders as $slider)
+                            <div class="item">
+                                <a href="{{ route('slider.show', $slider->id) }}">
+                                    <img src="{{asset($slider->images)}}" alt="image" style="height:350px" loading="lazy"></a>
 
-{{--@include('partials/gallery')--}}
-
-@include('partials/footer')
-
+                                <div class="pop-content">
+                                    <h3><a href="{{ route('slider.show', $slider->id) }}">{{$slider->name}}</a></h3>
+                                </div>
+                                <a href="{{ route('slider.show', $slider->id) }}">
+                                    <div class="go-corner">
+                                        <div class="go-arrow">
+                                            <i class="ri-arrow-right-up-line"></i>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="image">
+            <img src="assets/img/AboutImage.jpg" alt="image" loading="lazy" style="margin-bottom: 30px;margin-left: 10px">
+        </div>
+    </div>
+    <!-- End Article Area -->
+    @include('partials/faqs')
+    @include('partials.features')
+    @include('partials/footer')
+@endif
 
 
 <!-- Start Top to Bottom -->

@@ -14,10 +14,10 @@ class AdminSeeder extends Seeder
      */
     public function run(): void
     {
-        $hashedPassword = Hash::make('neon123');
+        $hashedPassword = Hash::make('Arma$112233');
         DB::table('users')->insert([
             'name'=>'admin',
-            'email'=>'admin@neon.com',
+            'email'=>'Armacadabra.info@gmail.com',
             'password'=>$hashedPassword
         ]);
     }
