@@ -119,7 +119,13 @@
     </div>
 </div>
 <!-- End Section Banner -->
-
+@if($agent->isMobile())
+<div class="col-lg-6">
+    <div class="image" style="margin-left: 15px;margin-right: 15px">
+        <img src="assets/img/AboutImage.jpg" alt="image" loading="lazy">
+    </div>
+</div>
+@endif
 @include('partials.aboutus')
 
 @include('partials.faqs')

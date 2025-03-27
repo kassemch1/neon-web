@@ -86,6 +86,9 @@
                             <div class="col-lg-12 col-md-12">
                                 <button type="submit" class="default-btn"><i class="ri-mail-send-line"></i> Send Message</button>
                             </div>
+                            <div class="mt-3 d-flex flex-column align-items-center justify-content-center w-100">
+                                <x-turnstile data-theme="dark"  data-sitekey="{{ env('TURNSTILE_SITE_KEY') }}" />
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -125,15 +128,30 @@
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
 
-                const formData = new FormData(contactForm);
-                // Add CSRF token if not already in the form
-                if (!formData.has('_token')) {
-                    formData.append('_token', $('meta[name="csrf-token"]').attr('content'));
+                // Clear previous response message
+                responseDiv.style.display = 'none';
+                responseDiv.textContent = '';
+
+                // Retrieve Turnstile response
+                const turnstileInput = document.querySelector('input[name="cf-turnstile-response"]');
+                if (!turnstileInput || !turnstileInput.value.trim()) {
+                    responseDiv.textContent = 'Please complete the security check.';
+                    responseDiv.style.display = 'block';
+                    responseDiv.className = 'alert alert-danger py-2 mb-3';
+                    return;
                 }
 
+                // Prepare form data
+                const formData = new FormData(contactForm);
+                formData.append('cf-turnstile-response', turnstileInput.value);
+
+                // AJAX request
                 $.ajax({
                     url: "{{ route('contact.submit') }}",
                     type: "POST",
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
                     data: formData,
                     processData: false,
                     contentType: false,
@@ -142,36 +160,40 @@
                         responseDiv.style.display = 'block';
                         responseDiv.className = 'alert alert-success py-2 mb-3';
 
+                        // Reset form and Turnstile
                         contactForm.reset();
-
-                        setTimeout(function() {
-                            responseDiv.style.display = 'none';
-                        }, 5000);
+                        if (typeof turnstile !== 'undefined') {
+                            turnstile.reset();
+                        }
                     },
                     error: function(xhr) {
                         let errorMessage = 'Something went wrong. Please try again.';
 
-                        // Check if there are specific validation errors
-                        if (xhr.status === 422 && xhr.responseJSON && xhr.responseJSON.errors) {
-                            // Join multiple error messages if there are any
-                            errorMessage = xhr.responseJSON.errors.join('<br>');
-                        } else if (xhr.responseJSON && xhr.responseJSON.message) {
-                            errorMessage = xhr.responseJSON.message;
+                        if (xhr.status === 422) {
+                            const errors = xhr.responseJSON?.errors || {};
+                            if (errors.email) errorMessage = errors.email[0];
+                            if (errors.message) errorMessage = errors.message[0];
+                            if (errors['cf-turnstile-response']) errorMessage = errors['cf-turnstile-response'][0];
+                        } else if (xhr.status === 500) {
+                            errorMessage = 'Server error. Please try again later.';
                         }
 
-                        responseDiv.innerHTML = errorMessage;
+                        responseDiv.textContent = errorMessage;
                         responseDiv.style.display = 'block';
                         responseDiv.className = 'alert alert-danger py-2 mb-3';
 
-                        setTimeout(function() {
-                            responseDiv.style.display = 'none';
-                        }, 5000);
+                        // Reset Turnstile on error
+                        if (typeof turnstile !== 'undefined') {
+                            turnstile.reset();
+                        }
                     }
                 });
             });
         }
     });
 </script>
+
+
 
 
 
