@@ -13,7 +13,7 @@
             <div class="col-lg-3 col-md-6">
                 <div class="single-fetuses-box" data-aos="fade-up" data-aos-duration="1500">
                     <div class="icon">
-                        <img src="{{asset("assets/img/mission.png")}}">
+                        <img src="{{asset("assets/img/mission.png")}}" alt="mission image">
                     </div>
                     <h3>OUR MISSION</h3>
                     <p>We elevate the visual identity of businesses by
@@ -26,14 +26,14 @@
             <div class="col-lg-3 col-md-6">
                 <div class="single-fetuses-box" data-aos="fade-up" data-aos-duration="1500">
                     <div class="icon">
-                        <img src="{{asset("assets/img/Precision.png")}}">
+                        <img src="{{asset("assets/img/logistics.webp")}}" alt="logistics solutions image">
                     </div>
-                    <h3>Precision
-                        Client-Centric</h3>
-                    <p>We set the bar high with precision as our
-                        hallmark. Each sign and banner reflects our
-                        unwavering commitment to accuracy and
-                        superior quality.</p>
+                    <h3>LOGISTICS SOLUTIONS</h3>
+
+                    <p>
+                        Global Shipping Made Easy
+                        We specialize in international logistics for our products,
+                        ensuring your orders arrive safely and on time—anywhere in the world.</p>
                 </div>
             </div>
 
@@ -56,7 +56,7 @@
                 <div class="single-fetuses-box" data-aos="fade-up" data-aos-duration="1500">
                     <div class="icon">
 
-                        <img src="{{asset("assets/img/Innovation.png")}}">
+                        <img src="{{asset("assets/img/Innovation.png")}}" alt="Innovation image">
                     </div>
                     <h3>Creativity
                          Innovation</h3>
