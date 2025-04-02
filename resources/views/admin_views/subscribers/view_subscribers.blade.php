@@ -39,7 +39,7 @@
     <link rel="stylesheet" href={{asset("admin_assets/css/helper.css")}}>
 
     <!-- Main Style CSS -->
-    <link rel="stylesheet" href={{asset("admin_assets/css/style.css")}}>
+{{--    <link rel="stylesheet" href={{asset("admin_assets/css/style.css")}}>--}}
 
     <!-- Custom Style CSS Only For Demo Purpose -->
     <link id="cus-style" rel="stylesheet" href={{asset("admin_assets/css/style-primary.css")}}>
@@ -96,6 +96,9 @@
                         @endforeach
                         </tbody>
                     </table>
+                    <div class="d-flex justify-content-center">
+                        {{ $subscribers->links('pagination::bootstrap-4') }}
+                    </div>
                 </div>
             </div>
         </div>

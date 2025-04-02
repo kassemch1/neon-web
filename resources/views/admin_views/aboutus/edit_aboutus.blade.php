@@ -2,7 +2,6 @@
 <html class="no-js" lang="en">
 
 
-<!-- Mirrored from demo.hasthemes.com/adomx-preview/dark/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 May 2024 12:18:03 GMT -->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -83,21 +82,21 @@
                     <h4 class="title">Numbers</h4>
 
                     <div class="row">
-                        <div class="col-lg-6 col-12 mb-30">
-                            <label for="">Clients</label>
-                            <input name="clients" class="form-control" type="number" min="1" placeholder="Clients" value="{{$aboutus->clients}}">
-                        </div>
+{{--                        <div class="col-lg-6 col-12 mb-30">--}}
+{{--                            <label for="">Clients</label>--}}
+{{--                            <input name="clients" class="form-control" type="number" min="1" placeholder="Clients" value="{{$aboutus->clients}}">--}}
+{{--                        </div>--}}
                         <div class="col-lg-6 col-12 mb-30">
                             <label for="">Years in Operation</label>
                             <input name="years" class="form-control" type="number" min="1" placeholder="Years in Operation" value="{{$aboutus->years}}">
                         </div>
-                        <div class="col-12 mb-30">
-                            <label for="">Description</label>
-                            <textarea name="description" class="form-control">{{$aboutus->description}}</textarea>
-                            @if ($errors->has('description'))
-                                <span class="text-danger">{{ $errors->first('description') }}</span>
-                            @endif
-                        </div>
+{{--                        <div class="col-12 mb-30">--}}
+{{--                            <label for="">Description</label>--}}
+{{--                            <textarea name="description" class="form-control">{{$aboutus->description}}</textarea>--}}
+{{--                            @if ($errors->has('description'))--}}
+{{--                                <span class="text-danger">{{ $errors->first('description') }}</span>--}}
+{{--                            @endif--}}
+{{--                        </div>--}}
 
                     </div>
                     <!-- Success Alert -->

@@ -152,5 +152,10 @@
         }
     });
 </script>
-
-
+<style>
+    @media (max-width: 768px) {
+        .footer-bottom-area {
+            margin-bottom: 50px;
+        }
+    }
+</style>
