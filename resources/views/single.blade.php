@@ -17,9 +17,18 @@
     <link rel="stylesheet" href="{{asset('assets/css/aos.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}">
-    @turnstileScripts()
-    <!-- favicon Linked -->
-    <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.png')}}">
+
+    <!-- Standard Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset("assets/img/favicon-32x32.png")}}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset("assets/img/favicon-16x16.png")}}">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{asset("assets/img/apple-touch-icon.png")}}">
+
+    <!-- Android Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="{{asset("assets/img/android-chrome-192x192.png")}}">
+    <link rel="icon" type="image/png" sizes="512x512" href="{{asset("assets/img/android-chrome-512x512.png")}}">
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
         .article-image {
             display: flex;
@@ -66,8 +75,8 @@
                 <div class="blog-details-desc">
 
                     <div class="article-image">
-                        <img src="{{asset($slider->images)}}" alt="image">
-                        <img src="{{asset($slider->secondImage)}}" alt="image">
+                        <img src="{{asset($slider->images)}}" alt="image" loading="lazy">
+                        <img src="{{asset($slider->secondImage)}}" alt="image" loading="lazy">
                     </div>
 
 

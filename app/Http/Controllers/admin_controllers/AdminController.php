@@ -19,21 +19,21 @@ class AdminController extends Controller
 
     public function admin_dashboard()
     {
-        $subscribers=Subscriber::all();
+        $subscribers = Subscriber::orderBy('created_at', 'desc')->paginate(10);
         return view('admin_views/subscribers/view_subscribers',[
             'subscribers'=>$subscribers
         ]);
     }
     public function contacts_index()
     {
-        $contacts=Contact::all();
+        $contacts=Contact::orderBy('created_at', 'desc')->paginate(10);
         return view('admin_views/contacts/view_contacts',[
             'contacts'=>$contacts
         ]);
     }
     public function subscribers_index()
     {
-        $subscribers=Subscriber::all();
+        $subscribers = Subscriber::orderBy('created_at', 'desc')->paginate(10);
         return view('admin_views/subscribers/view_subscribers',[
             'subscribers'=>$subscribers
         ]);

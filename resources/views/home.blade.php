@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="signage, banners, acrylics, vinyl, PVC, LED lighting, one-way vision vinyl, frosted vinyl, acrylic mirror, Alucobond, metallic vinyl, RGB LED, neon LED, sign standoffs, business branding, visual identity, custom signs, advertising materials, waterproof signage, commercial displays">
     <title>ArmaCadabra</title>
 
     <!-- CSS Linked -->
@@ -119,8 +120,8 @@
                 <div class="col-lg-4">
                     <div class="section-title">
                         <div class="width">
-                            <div class="sub-t">Our Latest News</div>
-                            <h2>Latest News & Articles</h2>
+                            <div class="sub-t">Our Products News</div>
+                            <h2>Latest Materials & Products</h2>
                             <a class="main-btn" href="{{route('blog.form')}}"><span></span><i class="ri-pencil-line"></i> See More</a>
                         </div>
                     </div>
