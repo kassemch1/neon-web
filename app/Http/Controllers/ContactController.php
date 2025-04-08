@@ -59,7 +59,7 @@ class ContactController extends Controller
             $validated = $validator->validated();
             Contact::create($validated);
 
-            Mail::to('Armacadabra.info@gmail.com')->send(new ContactMail($validated));
+            Mail::to('contact@armacadabra.com')->send(new ContactMail($validated));
             // Ajax success response
             if ($request->ajax()) {
                 return response()->json([
