@@ -75,8 +75,8 @@
                 <div class="col-lg-4">
                     <div class="section-title">
                         <div class="width">
-                            <div class="sub-t">Our Latest News</div>
-                            <h2>Latest News & Articles</h2>
+                            <div class="sub-t">Our Products</div>
+                            <h2>Latest Materials & Products</h2>
                             <a class="main-btn" href="{{route('blog.form')}}"><span></span><i class="ri-pencil-line"></i> See More</a>
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                 <div class="col-lg-4">
                     <div class="section-title">
                         <div class="width">
-                            <div class="sub-t">Our Products News</div>
+                            <div class="sub-t">Our Products</div>
                             <h2>Latest Materials & Products</h2>
                             <a class="main-btn" href="{{route('blog.form')}}"><span></span><i class="ri-pencil-line"></i> See More</a>
                         </div>
