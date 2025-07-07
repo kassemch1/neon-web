@@ -412,25 +412,25 @@
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- Logo -->
+
 <a href="{{route('home')}}" class="logo">
     <img src="{{asset("assets/img/ArmacadabraLogo.png")}}" alt="Armacadabra Logo">
 </a>
 
-<!-- Gradient background -->
+
 <div class="gradient-bg"></div>
 <div class="overlay"></div>
 <div class="grid-pattern"></div>
 
-<!-- Floating particles -->
+
 <div class="particle particle-1"></div>
 <div class="particle particle-2"></div>
 <div class="particle particle-3"></div>
 
-<!-- Main content -->
+
 <div class="thank-you-container">
     <div class="content-wrapper">
-        <!-- Success animation -->
+
         <div class="success-animation">
             <div class="pulse-circle"></div>
             <div class="pulse-circle" style="animation-delay: 0.5s;"></div>
@@ -442,14 +442,14 @@
             </div>
         </div>
 
-        <!-- Content -->
+
         <h1>Thank You!</h1>
         <p class="subtitle">Your message has been received</p>
         <p class="message">
-            We appreciate you reaching out to ArmaCadabra. Our team will review your message and get back to you within 24-48 hours. We look forward to helping you with your signage and materials needs.
+            We appreciate you reaching out to ArmaCadabra. Your message has been received and we will get back to your inquiries as soon as possible.
         </p>
 
-        <!-- Home button -->
+
         <a href="{{route('home')}}" class="home-btn">
             <i class="ri-arrow-left-line"></i>
             Return Home
