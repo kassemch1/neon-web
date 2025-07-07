@@ -17,3 +17,4 @@ require __DIR__. '/single.php';
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/thank-you', [App\Http\Controllers\ThankYouController::class, 'index'])->name('thank.you');

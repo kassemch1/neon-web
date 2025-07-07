@@ -54,7 +54,7 @@
     <!-- End Google Tag Manager (noscript) -->
 
 
-    
+
 
 @include('partials/navbar')
 
@@ -179,14 +179,17 @@
                     processData: false,
                     contentType: false,
                     success: function(response) {
-                        responseDiv.textContent = response.message || 'Thank you for contacting us! We will get back to you soon.';
-                        responseDiv.style.display = 'block';
-                        responseDiv.className = 'alert alert-success py-2 mb-3';
-
-                        // Reset form and Turnstile
-                        contactForm.reset();
-                        if (typeof turnstile !== 'undefined') {
-                            turnstile.reset();
+                        if (response.redirect) {
+                            window.location.href = response.redirect;
+                        } else {
+                            // Existing success handling
+                            responseDiv.textContent = response.message || 'Thank you for contacting us!';
+                            responseDiv.style.display = 'block';
+                            responseDiv.className = 'alert alert-success py-2 mb-3';
+                            contactForm.reset();
+                            if (typeof turnstile !== 'undefined') {
+                                turnstile.reset();
+                            }
                         }
                     },
                     error: function(xhr) {

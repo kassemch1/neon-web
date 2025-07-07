@@ -64,12 +64,13 @@ class ContactController extends Controller
             if ($request->ajax()) {
                 return response()->json([
                     'success' => true,
-                    'message' => 'Thank you for contacting us! We will get back to you soon.'
+                    'message' => 'Thank you for contacting us! We will get back to you soon.',
+                    'redirect' => route('thank.you') // Add redirect URL
                 ]);
             }
 
-            // Non-Ajax success redirect
-            return redirect()->back()->with('success', 'Thank you for contacting us! We will get back to you soon.');
+// Non-Ajax success redirect
+            return redirect()->route('thank.you');
         } catch (\Exception $e) {
             // Log the error
             Log::error('Contact form submission error: ' . $e->getMessage());

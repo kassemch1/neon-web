@@ -29,7 +29,8 @@ class SubscriberController extends Controller
             Mail::to('contact@armacadabra.com')->send(new SubscribeMail($validated));
             return response()->json([
                 'success' => true,
-                'message' => 'Thank you for subscribing!'
+                'message' => 'Thank you for subscribing!',
+                'redirect' => route('thank.you') // Add redirect URL
             ]);
         } catch (\Illuminate\Validation\ValidationException $e) {
             Log::error('Validation failed', $e->errors());

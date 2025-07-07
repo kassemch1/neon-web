@@ -106,19 +106,25 @@
                     processData: false,
                     contentType: false,
                     success: function(response) {
-                        responseDiv.textContent = response.message || 'Thank you for subscribing!';
-                        responseDiv.style.display = 'block';
-                        responseDiv.className = 'alert alert-success py-2 mb-3';
+                        if (response.redirect) {
+                            // Redirect to thank you page
+                            window.location.href = response.redirect;
+                        } else {
+                            // Existing success handling
+                            responseDiv.textContent = response.message || 'Thank you for subscribing!';
+                            responseDiv.style.display = 'block';
+                            responseDiv.className = 'alert alert-success py-2 mb-3';
 
-                        // Reset form and Turnstile
-                        subscribeForm.reset();
-                        if (typeof turnstile !== 'undefined') {
-                            turnstile.reset();
+                            // Reset form and Turnstile
+                            subscribeForm.reset();
+                            if (typeof turnstile !== 'undefined') {
+                                turnstile.reset();
+                            }
+
+                            setTimeout(() => {
+                                responseDiv.style.display = 'none';
+                            }, 5000);
                         }
-
-                        setTimeout(() => {
-                            responseDiv.style.display = 'none';
-                        }, 5000);
                     },
                     error: function(xhr) {
                         let errorMessage = 'Something went wrong. Please try again.';
