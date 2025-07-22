@@ -26,13 +26,13 @@ class ContactController extends Controller
             'message' => [
                 'required',
                 'string',
-                'min:10',
-                'max:150'
+                'min:1',
+                'max:255'
             ],
             'cf-turnstile-response' => ['required', $turnstile], // ✅ Moved here
         ], [
-            'message.min' => 'Your message must be at least 10 characters long.',
-            'message.max' => 'Your message cannot exceed 150 characters.',
+            'message.min' => 'Your message must be at least 1 characters long.',
+            'message.max' => 'Your message cannot exceed 255 characters.',
             'email.required' => 'Email address is required.',
             'email.email' => 'Please enter a valid email address.',
             'message.required' => 'Message is required.',
