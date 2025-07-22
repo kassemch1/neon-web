@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 class ContactController extends Controller
 {
@@ -25,7 +26,7 @@ class ContactController extends Controller
                 'max:150'
             ],
         ], [
-            'message.min' => 'Your message must be at least 10 characters long.',
+            'message.min' => 'Your message must be at least 1 characters long.',
             'message.max' => 'Your message cannot exceed 150 characters.',
             'email.required' => 'Email address is required.',
             'email.email' => 'Please enter a valid email address.',
@@ -65,7 +66,7 @@ class ContactController extends Controller
             return redirect()->back()->with('success', 'Thank you for contacting us! We will get back to you soon.');
         } catch (\Exception $e) {
             // Log the error
-            \Log::error('Contact form submission error: ' . $e->getMessage());
+            Log::error('Contact form submission error: ' . $e->getMessage());
 
             // Ajax error response
             if ($request->ajax()) {
