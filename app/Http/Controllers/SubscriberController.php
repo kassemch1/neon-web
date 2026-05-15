@@ -26,7 +26,7 @@ class SubscriberController extends Controller
             ]);
 
             Subscriber::create(['email' => $validated['email']]); // Save email
-            Mail::to('contact@armacadabra.com')->send(new SubscribeMail($validated));
+            Mail::to('contact@armacadabra-com-515715.hostingersite.com')->send(new SubscribeMail($validated));
             return response()->json([
                 'success' => true,
                 'message' => 'Thank you for subscribing!',

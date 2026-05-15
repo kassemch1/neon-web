@@ -1,2 +1,5 @@
 User-agent: *
+Allow: /
 Disallow:
+
+Sitemap: https://armacadabra-com-515715.hostingersite.com/sitemap.xml

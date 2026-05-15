@@ -3,7 +3,7 @@
     <div class="container-fluid">
 
         <div class="footer-copyright text-center">
-            <p class="text-body-light">2025 &copy; <a href="">ArmaCadabra</a></p>
+            <p class="text-body-light"><script>document.write(new Date().getFullYear())</script> &copy; <a href="">ArmaCadabra</a></p>
         </div>
 
     </div>
